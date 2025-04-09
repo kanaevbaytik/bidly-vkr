@@ -6,30 +6,87 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F12D84A2E400E1203F /* LotViewController.swift */; };
+		CE87F0F72D8739AD00E1203F /* StepProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F62D8739AD00E1203F /* StepProgressView.swift */; };
+		CE87F0FD2D8890B600E1203F /* CreateLotPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */; };
+		CE87F0FF2D8890F600E1203F /* UploadImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0FE2D8890F600E1203F /* UploadImagesViewController.swift */; };
+		CE87F1012D88910800E1203F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F1002D88910800E1203F /* DescriptionViewController.swift */; };
+		CE87F1032D8B5B7300E1203F /* CustomTextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F1022D8B5B7300E1203F /* CustomTextFieldContainer.swift */; };
+		CE87F1052D9088C900E1203F /* StepProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F1042D9088C900E1203F /* StepProgressHeaderView.swift */; };
+		CE87F1082D91BA5600E1203F /* UploadedPhotosContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F1072D91BA5600E1203F /* UploadedPhotosContainer.swift */; };
+		CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F1092D91BA7D00E1203F /* UploadPhotoContainer.swift */; };
+		CE87F10C2D91E3EB00E1203F /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F10B2D91E3EB00E1203F /* SuccessViewController.swift */; };
+		CE87F10E2D91E41400E1203F /* SuccessContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F10D2D91E41400E1203F /* SuccessContainerView.swift */; };
+		CE8D07812D74E84E00927D78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07792D74E84E00927D78 /* AppDelegate.swift */; };
+		CE8D07822D74E84E00927D78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D077E2D74E84E00927D78 /* SceneDelegate.swift */; };
+		CE8D07842D74E84E00927D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8D077A2D74E84E00927D78 /* Assets.xcassets */; };
+		CE8D07862D74E84E00927D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D077D2D74E84E00927D78 /* LaunchScreen.storyboard */; };
+		CE8D07902D74EAB200927D78 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D078F2D74EAB200927D78 /* AuthViewController.swift */; };
+		CE8D07932D74EE1A00927D78 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07922D74EE1A00927D78 /* UIView.swift */; };
+		CE8D07962D74F6A200927D78 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07952D74F6A200927D78 /* CustomTextField.swift */; };
+		CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07972D74F6BF00927D78 /* CustomButton.swift */; };
+		CE8D079B2D762C9600927D78 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079A2D762C9600927D78 /* RegViewController.swift */; };
+		CE8D079D2D762F9B00927D78 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079C2D762F9B00927D78 /* AuthViewModel.swift */; };
+		CE8D079F2D76305E00927D78 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079E2D76305E00927D78 /* APIManager.swift */; };
+		CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A02D7773B000927D78 /* MainViewController.swift */; };
+		CE8D07AA2D77832900927D78 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A92D77832900927D78 /* Category.swift */; };
+		CE8D07AC2D77833500927D78 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07AB2D77833500927D78 /* Product.swift */; };
+		CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */; };
+		CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */; };
+		CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */; };
+		CEE78A6F2D7DBD940007C8D5 /* MyBidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6E2D7DBD930007C8D5 /* MyBidsViewController.swift */; };
+		CEE78A722D7DBDB50007C8D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A712D7DBDB50007C8D5 /* ProfileViewController.swift */; };
+		CEE78A752D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */; };
+		CEE78A792D7DBE5D0007C8D5 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A782D7DBE5D0007C8D5 /* NotificationsViewController.swift */; };
+		CEE78A7D2D7E13550007C8D5 /* CreateLotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A7C2D7E13550007C8D5 /* CreateLotViewModel.swift */; };
+		CEE78A832D7E17670007C8D5 /* SetPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A822D7E17670007C8D5 /* SetPriceViewController.swift */; };
+		CEE78A852D7E2E040007C8D5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A842D7E2E040007C8D5 /* UIColor.swift */; };
+		CEE78A872D80D1150007C8D5 /* AuctionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A862D80D1150007C8D5 /* AuctionItemCell.swift */; };
+		CEE78A892D80D4E80007C8D5 /* AuctionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A882D80D4E80007C8D5 /* AuctionItem.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		CE87F0F12D84A2E400E1203F /* LotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotViewController.swift; sourceTree = "<group>"; };
+		CE87F0F62D8739AD00E1203F /* StepProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressView.swift; sourceTree = "<group>"; };
+		CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLotPageViewController.swift; sourceTree = "<group>"; };
+		CE87F0FE2D8890F600E1203F /* UploadImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImagesViewController.swift; sourceTree = "<group>"; };
+		CE87F1002D88910800E1203F /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		CE87F1022D8B5B7300E1203F /* CustomTextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldContainer.swift; sourceTree = "<group>"; };
+		CE87F1042D9088C900E1203F /* StepProgressHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressHeaderView.swift; sourceTree = "<group>"; };
+		CE87F1072D91BA5600E1203F /* UploadedPhotosContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPhotosContainer.swift; sourceTree = "<group>"; };
+		CE87F1092D91BA7D00E1203F /* UploadPhotoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoContainer.swift; sourceTree = "<group>"; };
+		CE87F10B2D91E3EB00E1203F /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		CE87F10D2D91E41400E1203F /* SuccessContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessContainerView.swift; sourceTree = "<group>"; };
 		CE8D07612D74E81300927D78 /* Bidly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bidly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE8D07792D74E84E00927D78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE8D077A2D74E84E00927D78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE8D077B2D74E84E00927D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8D077C2D74E84E00927D78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE8D077E2D74E84E00927D78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE8D078F2D74EAB200927D78 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		CE8D07922D74EE1A00927D78 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CE8D07952D74F6A200927D78 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CE8D07972D74F6BF00927D78 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CE8D079A2D762C9600927D78 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		CE8D079C2D762F9B00927D78 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CE8D079E2D76305E00927D78 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CE8D07A02D7773B000927D78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE8D07A92D77832900927D78 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CE8D07AB2D77833500927D78 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVIew.swift; sourceTree = "<group>"; };
+		CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		CEE78A6E2D7DBD930007C8D5 /* MyBidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBidsViewController.swift; sourceTree = "<group>"; };
+		CEE78A712D7DBDB50007C8D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterLotDetailsViewController.swift; sourceTree = "<group>"; };
+		CEE78A782D7DBE5D0007C8D5 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		CEE78A7C2D7E13550007C8D5 /* CreateLotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLotViewModel.swift; sourceTree = "<group>"; };
+		CEE78A822D7E17670007C8D5 /* SetPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPriceViewController.swift; sourceTree = "<group>"; };
+		CEE78A842D7E2E040007C8D5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CEE78A862D80D1150007C8D5 /* AuctionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionItemCell.swift; sourceTree = "<group>"; };
+		CEE78A882D80D4E80007C8D5 /* AuctionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CE8D07732D74E81600927D78 /* Exceptions for "Bidly" folder in "Bidly" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = CE8D07602D74E81300927D78 /* Bidly */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CE8D07632D74E81300927D78 /* Bidly */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CE8D07732D74E81600927D78 /* Exceptions for "Bidly" folder in "Bidly" target */,
-			);
-			path = Bidly;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE8D075E2D74E81300927D78 /* Frameworks */ = {
@@ -42,10 +99,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE87F0F32D84A32300E1203F /* AuctionItem */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F0F12D84A2E400E1203F /* LotViewController.swift */,
+			);
+			path = AuctionItem;
+			sourceTree = "<group>";
+		};
+		CE87F0FA2D888F4000E1203F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */,
+				CEE78A822D7E17670007C8D5 /* SetPriceViewController.swift */,
+				CE87F0FE2D8890F600E1203F /* UploadImagesViewController.swift */,
+				CE87F1002D88910800E1203F /* DescriptionViewController.swift */,
+				CE87F10B2D91E3EB00E1203F /* SuccessViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CE87F0FB2D88907100E1203F /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F10F2D91EDD800E1203F /* StepProgressView */,
+				CE87F1062D91BA1400E1203F /* UploadPhotosView */,
+				CE87F10D2D91E41400E1203F /* SuccessContainerView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		CE87F1062D91BA1400E1203F /* UploadPhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F1072D91BA5600E1203F /* UploadedPhotosContainer.swift */,
+				CE87F1092D91BA7D00E1203F /* UploadPhotoContainer.swift */,
+			);
+			path = UploadPhotosView;
+			sourceTree = "<group>";
+		};
+		CE87F10F2D91EDD800E1203F /* StepProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F0F62D8739AD00E1203F /* StepProgressView.swift */,
+				CE87F1042D9088C900E1203F /* StepProgressHeaderView.swift */,
+			);
+			path = StepProgressView;
+			sourceTree = "<group>";
+		};
 		CE8D07582D74E81300927D78 = {
 			isa = PBXGroup;
 			children = (
-				CE8D07632D74E81300927D78 /* Bidly */,
+				CE8D07802D74E84E00927D78 /* Bidly */,
 				CE8D07622D74E81300927D78 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +161,235 @@
 				CE8D07612D74E81300927D78 /* Bidly.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CE8D07802D74E84E00927D78 /* Bidly */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D078A2D74E91800927D78 /* Services */,
+				CE8D07892D74E91200927D78 /* Common */,
+				CE8D07882D74E8E700927D78 /* Modules */,
+				CE8D07872D74E8C400927D78 /* App */,
+				CE8D077B2D74E84E00927D78 /* Info.plist */,
+				CE8D077D2D74E84E00927D78 /* LaunchScreen.storyboard */,
+			);
+			path = Bidly;
+			sourceTree = "<group>";
+		};
+		CE8D07872D74E8C400927D78 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07792D74E84E00927D78 /* AppDelegate.swift */,
+				CE8D077E2D74E84E00927D78 /* SceneDelegate.swift */,
+				CE8D077A2D74E84E00927D78 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE8D07882D74E8E700927D78 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F0F32D84A32300E1203F /* AuctionItem */,
+				CEE78A7A2D7DBE6D0007C8D5 /* AuthReg */,
+				CEE78A762D7DBE430007C8D5 /* Notifications */,
+				CEE78A6C2D7DBD680007C8D5 /* MyBids */,
+				CEE78A692D7DB9430007C8D5 /* TabBar */,
+				CE8D078E2D74E96300927D78 /* Profile */,
+				CE8D078D2D74E95600927D78 /* AddLot */,
+				CE8D078C2D74E94E00927D78 /* Home */,
+				CE8D07942D74F68100927D78 /* CustomUI */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CE8D07892D74E91200927D78 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07912D74EDE000927D78 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CE8D078A2D74E91800927D78 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D079E2D76305E00927D78 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE8D078B2D74E93100927D78 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D078F2D74EAB200927D78 /* AuthViewController.swift */,
+				CE8D079C2D762F9B00927D78 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CE8D078C2D74E94E00927D78 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07A82D77830900927D78 /* Model */,
+				CE8D07A72D7782F800927D78 /* ViewModel */,
+				CE8D07A62D7782EB00927D78 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE8D078D2D74E95600927D78 /* AddLot */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A7B2D7E13320007C8D5 /* ViewModel */,
+				CEE78A732D7DBDBC0007C8D5 /* View */,
+			);
+			path = AddLot;
+			sourceTree = "<group>";
+		};
+		CE8D078E2D74E96300927D78 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A702D7DBDA60007C8D5 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE8D07912D74EDE000927D78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07922D74EE1A00927D78 /* UIView.swift */,
+				CEE78A842D7E2E040007C8D5 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE8D07942D74F68100927D78 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07952D74F6A200927D78 /* CustomTextField.swift */,
+				CE8D07972D74F6BF00927D78 /* CustomButton.swift */,
+				CE87F1022D8B5B7300E1203F /* CustomTextFieldContainer.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		CE8D07992D762C1500927D78 /* Reg */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D079A2D762C9600927D78 /* RegViewController.swift */,
+			);
+			path = Reg;
+			sourceTree = "<group>";
+		};
+		CE8D07A62D7782EB00927D78 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A662D7C80B20007C8D5 /* HelpersView */,
+				CE8D07A02D7773B000927D78 /* MainViewController.swift */,
+				CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE8D07A72D7782F800927D78 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE8D07A82D77830900927D78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07A92D77832900927D78 /* Category.swift */,
+				CE8D07AB2D77833500927D78 /* Product.swift */,
+				CEE78A882D80D4E80007C8D5 /* AuctionItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE78A662D7C80B20007C8D5 /* HelpersView */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */,
+				CEE78A862D80D1150007C8D5 /* AuctionItemCell.swift */,
+			);
+			path = HelpersView;
+			sourceTree = "<group>";
+		};
+		CEE78A692D7DB9430007C8D5 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CEE78A6C2D7DBD680007C8D5 /* MyBids */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A6D2D7DBD7E0007C8D5 /* View */,
+			);
+			path = MyBids;
+			sourceTree = "<group>";
+		};
+		CEE78A6D2D7DBD7E0007C8D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A6E2D7DBD930007C8D5 /* MyBidsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE78A702D7DBDA60007C8D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A712D7DBDB50007C8D5 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE78A732D7DBDBC0007C8D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F0FB2D88907100E1203F /* CommonViews */,
+				CE87F0FA2D888F4000E1203F /* Screens */,
+				CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE78A762D7DBE430007C8D5 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A772D7DBE520007C8D5 /* View */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		CEE78A772D7DBE520007C8D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A782D7DBE5D0007C8D5 /* NotificationsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE78A7A2D7DBE6D0007C8D5 /* AuthReg */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D07992D762C1500927D78 /* Reg */,
+				CE8D078B2D74E93100927D78 /* Auth */,
+			);
+			path = AuthReg;
+			sourceTree = "<group>";
+		};
+		CEE78A7B2D7E13320007C8D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A7C2D7E13550007C8D5 /* CreateLotViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +406,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CE8D07632D74E81300927D78 /* Bidly */,
 			);
 			name = Bidly;
 			packageProductDependencies = (
@@ -122,6 +453,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8D07842D74E84E00927D78 /* Assets.xcassets in Resources */,
+				CE8D07862D74E84E00927D78 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +465,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE87F1012D88910800E1203F /* DescriptionViewController.swift in Sources */,
+				CEE78A872D80D1150007C8D5 /* AuctionItemCell.swift in Sources */,
+				CE87F0FD2D8890B600E1203F /* CreateLotPageViewController.swift in Sources */,
+				CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */,
+				CEE78A792D7DBE5D0007C8D5 /* NotificationsViewController.swift in Sources */,
+				CE8D07932D74EE1A00927D78 /* UIView.swift in Sources */,
+				CE87F10E2D91E41400E1203F /* SuccessContainerView.swift in Sources */,
+				CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */,
+				CE87F1082D91BA5600E1203F /* UploadedPhotosContainer.swift in Sources */,
+				CE87F1052D9088C900E1203F /* StepProgressHeaderView.swift in Sources */,
+				CEE78A7D2D7E13550007C8D5 /* CreateLotViewModel.swift in Sources */,
+				CE87F0F72D8739AD00E1203F /* StepProgressView.swift in Sources */,
+				CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */,
+				CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */,
+				CEE78A892D80D4E80007C8D5 /* AuctionItem.swift in Sources */,
+				CE8D07902D74EAB200927D78 /* AuthViewController.swift in Sources */,
+				CEE78A832D7E17670007C8D5 /* SetPriceViewController.swift in Sources */,
+				CEE78A852D7E2E040007C8D5 /* UIColor.swift in Sources */,
+				CE8D079F2D76305E00927D78 /* APIManager.swift in Sources */,
+				CE87F0FF2D8890F600E1203F /* UploadImagesViewController.swift in Sources */,
+				CE8D07962D74F6A200927D78 /* CustomTextField.swift in Sources */,
+				CEE78A752D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift in Sources */,
+				CE8D07812D74E84E00927D78 /* AppDelegate.swift in Sources */,
+				CEE78A722D7DBDB50007C8D5 /* ProfileViewController.swift in Sources */,
+				CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */,
+				CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */,
+				CE8D07822D74E84E00927D78 /* SceneDelegate.swift in Sources */,
+				CE87F10C2D91E3EB00E1203F /* SuccessViewController.swift in Sources */,
+				CE8D079B2D762C9600927D78 /* RegViewController.swift in Sources */,
+				CE87F1032D8B5B7300E1203F /* CustomTextFieldContainer.swift in Sources */,
+				CE8D07AA2D77832900927D78 /* Category.swift in Sources */,
+				CEE78A6F2D7DBD940007C8D5 /* MyBidsViewController.swift in Sources */,
+				CE8D079D2D762F9B00927D78 /* AuthViewModel.swift in Sources */,
+				CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */,
+				CE8D07AC2D77833500927D78 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE8D077D2D74E84E00927D78 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE8D077C2D74E84E00927D78 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE8D07752D74E81600927D78 /* Debug */ = {
@@ -143,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WQRR65523H;
@@ -150,7 +530,6 @@
 				INFOPLIST_FILE = Bidly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -158,8 +537,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nope.Bidly;
+				PRODUCT_BUNDLE_IDENTIFIER = nope.Bidly1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -171,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WQRR65523H;
@@ -178,7 +559,6 @@
 				INFOPLIST_FILE = Bidly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -186,8 +566,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nope.Bidly;
+				PRODUCT_BUNDLE_IDENTIFIER = nope.Bidly1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

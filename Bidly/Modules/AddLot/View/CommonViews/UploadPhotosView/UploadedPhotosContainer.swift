@@ -18,6 +18,7 @@ class UploadedPhotosContainer: UIView {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
         stackView.spacing = 8
         return stackView
     }()
@@ -44,29 +45,57 @@ class UploadedPhotosContainer: UIView {
     }
 
     func addPhoto(_ image: UIImage) {
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.clipsToBounds = true
+        containerView.backgroundColor = .clear
+
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
 
         let deleteButton = UIButton(type: .system)
         deleteButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         deleteButton.tintColor = .red
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
         deleteButton.addTarget(self, action: #selector(removePhoto(_:)), for: .touchUpInside)
 
-        let photoView = UIStackView(arrangedSubviews: [imageView, deleteButton])
-        photoView.spacing = 4
-        stackView.addArrangedSubview(photoView)
+        containerView.addSubview(imageView)
+        containerView.addSubview(deleteButton)
+
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            imageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 64),
+            imageView.heightAnchor.constraint(equalToConstant: 64),
+
+            deleteButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -5),
+            deleteButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 5),
+            deleteButton.widthAnchor.constraint(equalToConstant: 20),
+            deleteButton.heightAnchor.constraint(equalToConstant: 20),
+
+            containerView.widthAnchor.constraint(equalToConstant: 64),
+            containerView.heightAnchor.constraint(equalToConstant: 64)
+        ])
+
+        containerView.setContentHuggingPriority(.required, for: .horizontal)
+        containerView.setContentCompressionResistancePriority(.required, for: .horizontal)
+
+        stackView.addArrangedSubview(containerView)
     }
 
+
+
+
+
     @objc private func removePhoto(_ sender: UIButton) {
-        guard let photoView = sender.superview else { return }
-        stackView.removeArrangedSubview(photoView)
-        photoView.removeFromSuperview()
+        guard let containerView = sender.superview else { return }
+        stackView.removeArrangedSubview(containerView)
+        containerView.removeFromSuperview()
     }
+
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

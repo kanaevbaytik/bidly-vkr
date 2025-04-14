@@ -51,6 +51,8 @@ class SetPriceViewController: UIViewController {
 
         priceField.addTarget(self, action: #selector(priceChanged), for: .editingChanged)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        
+        priceField.keyboardType = .numberPad
 
         nextButton.isEnabled = false
         nextButton.alpha = 0.5

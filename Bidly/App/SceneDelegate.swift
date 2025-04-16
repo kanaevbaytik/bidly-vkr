@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         let authViewController = AuthViewController()
-        let successViewController = SuccessViewController()
+//        let successViewController = SuccessViewController()
         let tabBarController = CustomTabBarController()
         let mainViewController = MainViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)

@@ -32,6 +32,7 @@
 		CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A02D7773B000927D78 /* MainViewController.swift */; };
 		CE8D07AA2D77832900927D78 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A92D77832900927D78 /* Category.swift */; };
 		CE8D07AC2D77833500927D78 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07AB2D77833500927D78 /* Product.swift */; };
+		CEE445412DAEF77E00F33366 /* LotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445402DAEF77E00F33366 /* LotService.swift */; };
 		CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */; };
 		CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */; };
 		CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */; };
@@ -74,6 +75,7 @@
 		CE8D07A02D7773B000927D78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE8D07A92D77832900927D78 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CE8D07AB2D77833500927D78 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CEE445402DAEF77E00F33366 /* LotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotService.swift; sourceTree = "<group>"; };
 		CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVIew.swift; sourceTree = "<group>"; };
 		CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8D079E2D76305E00927D78 /* APIManager.swift */,
+				CEE445402DAEF77E00F33366 /* LotService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				CE8D07962D74F6A200927D78 /* CustomTextField.swift in Sources */,
 				CEE78A752D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift in Sources */,
 				CE8D07812D74E84E00927D78 /* AppDelegate.swift in Sources */,
+				CEE445412DAEF77E00F33366 /* LotService.swift in Sources */,
 				CEE78A722D7DBDB50007C8D5 /* ProfileViewController.swift in Sources */,
 				CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */,
 				CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */,

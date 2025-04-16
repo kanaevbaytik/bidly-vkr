@@ -2,19 +2,20 @@
 //  SuccessContainerView.swift
 //  Bidly
 //
-//  Created by Baytik  on 25/3/25.
+//  Created by Baytik on 25/3/25.
 //
 
 import UIKit
 
 protocol SuccessContainerViewDelegate: AnyObject {
-    
     func didTapBackToHome()
+    func didTapPublish()
 }
 
 class SuccessContainerView: UIView {
-    
+
     weak var delegate: SuccessContainerViewDelegate?
+    var publishAction: (() -> Void)? // Новый коллбэк
 
     private let successIcon: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "checkmark.circle.fill"))
@@ -22,7 +23,7 @@ class SuccessContainerView: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+
     private let successLabel: UILabel = {
         let label = UILabel()
         label.text = "Успешное создание лота"
@@ -30,16 +31,16 @@ class SuccessContainerView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
+
     private let backToHomeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Вернуться на главную", for: .normal)
+        button.setTitle("Назад в главное", for: .normal)
         button.setTitleColor(UIColor(hex: "#5856D6FF"), for: .normal)
         button.backgroundColor = UIColor(hex: "#EDEBFAFF")
         button.layer.cornerRadius = 8
         return button
     }()
-    
+
     private let publishButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Опубликовать", for: .normal)
@@ -54,11 +55,11 @@ class SuccessContainerView: UIView {
         setupUI()
         setupActions()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupUI() {
         backgroundColor = .white
         layer.cornerRadius = 12
@@ -66,12 +67,12 @@ class SuccessContainerView: UIView {
         layer.shadowOpacity = 0.1
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 4
-        
+
         let stackView = UIStackView(arrangedSubviews: [successIcon, successLabel, backToHomeButton, publishButton])
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 16
-        
+
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -85,13 +86,24 @@ class SuccessContainerView: UIView {
             publishButton.heightAnchor.constraint(equalToConstant: 42)
         ])
     }
-    
+
     private func setupActions() {
         backToHomeButton.addTarget(self, action: #selector(backToHomeTapped), for: .touchUpInside)
+        publishButton.addTarget(self, action: #selector(publishTapped), for: .touchUpInside)
     }
-    
+
     @objc private func backToHomeTapped() {
-        print("Кнопка нажата - backToHomeTapped") // Добавь это
+        print("Кнопка нажата - backToHomeTapped")
         delegate?.didTapBackToHome()
+    }
+
+//    @objc private func publishTapped() {
+//        print("Кнопка нажата - publishTapped")
+//        publishAction?()
+//    }
+    
+    @objc private func publishTapped() {
+        print("Кнопка нажата - publishTapped")
+        delegate?.didTapPublish()
     }
 }

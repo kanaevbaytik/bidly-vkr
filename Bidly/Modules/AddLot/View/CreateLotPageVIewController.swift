@@ -27,7 +27,7 @@ class CreateLotPageViewController: UIPageViewController, LotStepDelegate {
         let setPriceVC = SetPriceViewController(viewModel: viewModel)
         let uploadImagesVC = UploadImagesViewController(viewModel: viewModel)
         let descriptionVC = DescriptionViewController(viewModel: viewModel)
-        let successVC = SuccessViewController()
+        let successVC = SuccessViewController(viewModel: viewModel)
         
         enterLotVC.delegate = self
         setPriceVC.delegate = self

@@ -6,6 +6,7 @@ class EnterLotDetailsViewController: UIViewController {
 
     private let titleField = CustomTextField(placeholder: "Enter title")
     private let categoryField = CustomTextField(placeholder: "Select category")
+    private let dateField = CustomTextField(placeholder: "Выберите дату окончания")
     private let nextButton = CustomButton(title: "Next")
 
     private let dropdownArrow = UIImageView()
@@ -26,7 +27,9 @@ class EnterLotDetailsViewController: UIViewController {
     ]
 
     var isFormValid: Bool {
-        return !(titleField.text?.isEmpty ?? true) && !(categoryField.text?.isEmpty ?? true)
+        return !(titleField.text?.isEmpty ?? true) &&
+               !(categoryField.text?.isEmpty ?? true) &&
+               !(dateField.text?.isEmpty ?? true)
     }
 
     init(viewModel: CreateLotViewModel) {
@@ -43,20 +46,25 @@ class EnterLotDetailsViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Создать лот"
 
-        let textFieldContainer = CustomTextFieldContainer(textFields: [
+        let mainContainer = CustomTextFieldContainer(textFields: [
             (titleField, "Title"),
             (categoryField, "Category")
         ])
 
-        view.addSubview(textFieldContainer)
-        view.addSubview(nextButton)
-        view.addSubview(dropdownTableView)
+        let dateContainer = CustomTextFieldContainer(textFields: [
+            (dateField, "Окончание аукциона")
+        ])
 
-        setupConstraints(textFieldContainer)
+        view.addSubviews(mainContainer, dateContainer, nextButton, dropdownTableView)
+
+        setupConstraints(mainContainer, dateContainer)
         setupDropdown()
+        setupDatePicker()
 
         titleField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
         categoryField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        dateField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         nextButton.updateState(isEnabled: false)
 
@@ -65,15 +73,20 @@ class EnterLotDetailsViewController: UIViewController {
         categoryField.isUserInteractionEnabled = true
     }
 
-    private func setupConstraints(_ textFieldContainer: UIView) {
-        textFieldContainer.translatesAutoresizingMaskIntoConstraints = false
+    private func setupConstraints(_ mainContainer: UIView, _ dateContainer: UIView) {
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        dateContainer.translatesAutoresizingMaskIntoConstraints = false
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         dropdownTableView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            textFieldContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            textFieldContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            textFieldContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
+            mainContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            mainContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            mainContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
+
+            dateContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            dateContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            dateContainer.topAnchor.constraint(equalTo: mainContainer.bottomAnchor, constant: 20),
 
             nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -83,7 +96,7 @@ class EnterLotDetailsViewController: UIViewController {
             dropdownTableView.leadingAnchor.constraint(equalTo: categoryField.leadingAnchor),
             dropdownTableView.trailingAnchor.constraint(equalTo: categoryField.trailingAnchor),
             dropdownTableView.topAnchor.constraint(equalTo: categoryField.bottomAnchor, constant: 4),
-            dropdownTableView.heightAnchor.constraint(equalToConstant: 0) // изначально скрыт
+            dropdownTableView.heightAnchor.constraint(equalToConstant: 0)
         ])
     }
 
@@ -107,6 +120,36 @@ class EnterLotDetailsViewController: UIViewController {
         dropdownTableView.dataSource = self
         dropdownTableView.delegate = self
         dropdownTableView.isHidden = true
+    }
+
+    private func setupDatePicker() {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.minimumDate = Date()
+
+        if #available(iOS 13.4, *) {
+            datePicker.locale = Locale(identifier: "ru_RU")
+        }
+
+        dateField.inputView = datePicker
+
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(donePickingDate))
+        toolbar.setItems([doneButton], animated: false)
+        dateField.inputAccessoryView = toolbar
+    }
+
+    @objc private func donePickingDate() {
+        if let datePicker = dateField.inputView as? UIDatePicker {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy HH:mm"
+            dateField.text = formatter.string(from: datePicker.date)
+            textFieldsChanged()
+        }
+        view.endEditing(true)
     }
 
     @objc private func categoryFieldTapped() {

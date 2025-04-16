@@ -51,8 +51,24 @@ class MainViewController: UIViewController {
     }()
 
     private var auctionItems: [AuctionItem] = [
-        AuctionItem(imageName: "example1", title: "iPhone 13", category: "Электроника", lastBid: 25000, endDate: Date()),
-        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", lastBid: 80000, endDate: Date())
+        AuctionItem(imageName: "example1", title: "iPhone 13", category: "Электроника", lastBid: 25000, endDate: Date(), description: """
+lk;asdjfals;kjdf
+askldjf;lsakdjfsd
+als;djf;laskjdf
+a;lskjdf;aslkdfj
+a;lskdjf;alksjdf
+asdjfa;lksjdf
+;alskjdf;laksjdf
+;aslkjdf;alskjdf
+asjdf;alksjdf
+;alskdjf;alskdfj
+;alksjdf;laskjdf
+;alkjdsf;lsakjdf
+;alskjdf;alsdkfj
+;alskjdf;alskjdf
+;asjdf;aslkjdf
+""", sellerName: "jessy pinkman", imageNames: ["example1", "example2", "example3"]),
+        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: [";akdj", "aksjd", "kasjd;lf"])
     ]
     
     override func viewDidLoad() {

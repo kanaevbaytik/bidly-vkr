@@ -53,32 +53,11 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
 
     private func setupPublishAction() {
         successContainer.publishAction = { [weak self] in
-            self?.publishLot()
+            self?.didTapPublish()
         }
     }
     
-    // MARK: - SuccessContainerViewDelegate
-    private func publishLot() {
-        print("Попытка опубликовать лот...")
-
-        viewModel.publishLot { [weak self] success in
-            DispatchQueue.main.async {
-                switch success {
-                case .success:
-                    print("Лот успешно опубликован")
-                    let alert = UIAlertController(title: "Успешно", message: "Лот опубликован!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ок", style: .default))
-                    self?.present(alert, animated: true)
-
-                case .failure(let error):
-                    print("Ошибка при публикации лота: \(error.localizedDescription)")
-                    let alert = UIAlertController(title: "Ошибка", message: "Не удалось опубликовать лот.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Понял", style: .cancel))
-                    self?.present(alert, animated: true)
-                }
-            }
-        }
-    }
+    
     func didTapPublish() {
         print("🔄 Публикуем лот...")
 
@@ -101,8 +80,7 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
             }
         }
     }
-
-
+    
     func didTapBackToHome() {
         delegate?.finishCreatingLot()
         print("нажата кнопка вернутся домой")

@@ -17,11 +17,3 @@ struct AuctionItem {
     let sellerName: String
     let imageNames: [String]
 }
-
-//extension AuctionItem {
-//    func formattedEndDate() -> String {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "dd.MM.yyyy HH:mm"
-//        return formatter.string(from: endDate)
-//    }
-//}

@@ -99,7 +99,7 @@ class EnterLotDetailsViewController: UIViewController {
             dropdownTableView.heightAnchor.constraint(equalToConstant: 0)
         ])
     }
-
+    
     private func setupDropdown() {
         dropdownArrow.image = UIImage(systemName: "chevron.right")
         dropdownArrow.tintColor = .gray
@@ -196,7 +196,15 @@ class EnterLotDetailsViewController: UIViewController {
 
     @objc private func nextButtonTapped() {
         if isFormValid {
-            delegate?.goToNextPage()
+            let success = viewModel.setBasicDetails(
+                title: titleField.text,
+                category: categoryField.text,
+                endDateString: dateField.text
+            )
+            
+            if success {
+                delegate?.goToNextPage()
+            }
         }
     }
 }
@@ -220,3 +228,4 @@ extension EnterLotDetailsViewController: UITableViewDataSource, UITableViewDeleg
         textFieldsChanged()
     }
 }
+

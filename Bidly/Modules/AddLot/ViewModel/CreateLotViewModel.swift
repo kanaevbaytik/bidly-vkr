@@ -6,60 +6,76 @@
 //
 
 import Foundation
+import UIKit
 
-class CreateLotViewModel {
+final class CreateLotViewModel {
+    
+    // MARK: - Lot Properties
     var title: String?
     var category: String?
-    var location: String?
-    var auctionDate: Date?
+    var startPrice: Double?
     var minBidStep: Double?
-    var image: [Data] = []
-    var description: String?
-    
-    init () {}
-    
-    func publishLot(completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let title = title,
-              let category = category,
-              let location = location,
-              let auctionDate = auctionDate,
-              let minBidStep = minBidStep,
-              let description = description else {
-            completion(.failure(NSError(domain: "Missing fields", code: 400, userInfo: nil)))
-            return
-        }
-        
-        let url = URL(string: "https://your-api.com/api/lots")! // заменишь на нужный URL
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let lotData: [String: Any] = [
-            "title": title,
-            "category": category,
-            "location": location,
-            "auctionDate": ISO8601DateFormatter().string(from: auctionDate),
-            "minBidStep": minBidStep,
-            "description": description
-        ]
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: lotData)
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        } catch {
-            completion(.failure(error))
-            return
+    var endDate: Date?
+    var images: [UIImage] = []
+    var lotDescription: String?
+
+    // MARK: - Computed Properties
+    var isReadyToSubmit: Bool {
+        return title != nil &&
+               category != nil &&
+               startPrice != nil &&
+               minBidStep != nil &&
+               endDate != nil &&
+               !images.isEmpty &&
+               lotDescription != nil
+    }
+
+    // MARK: - Step 1: Set basic details
+    func setBasicDetails(title: String?, category: String?, endDateString: String?) -> Bool {
+        guard
+            let title = title, !title.isEmpty,
+            let category = category, !category.isEmpty,
+            let dateStr = endDateString, !dateStr.isEmpty,
+            let date = DateFormatter.lotDateFormatter.date(from: dateStr)
+        else {
+            return false
         }
 
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            completion(.success(()))
+        self.title = title
+        self.category = category
+        self.endDate = date
+
+        print("✅ Title: \(title)")
+        print("✅ Category: \(category)")
+        print("✅ End Date: \(date)")
+        return true
+    }
+
+    // MARK: - Step 2: Set pricing
+    func setPricing(startPrice: Double?) -> Bool {
+        guard let price = startPrice, price > 0 else {
+            return false
         }
-        task.resume()
+
+        self.startPrice = price
+        self.minBidStep = (price * 0.05).rounded() // 5%
+
+        print("💰 Start Price: \(price)")
+        print("📈 Min Bid Step: \(self.minBidStep!)")
+        return true
     }
 }
+
+
+extension DateFormatter {
+    static let lotDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        return formatter
+    }()
+}
+
+
 
 
 

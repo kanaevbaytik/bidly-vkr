@@ -97,13 +97,9 @@ class SuccessContainerView: UIView {
         delegate?.didTapBackToHome()
     }
 
-//    @objc private func publishTapped() {
-//        print("Кнопка нажата - publishTapped")
-//        publishAction?()
-//    }
     
     @objc private func publishTapped() {
-        print("Кнопка нажата - publishTapped")
+        print("Кнопка нажата - didTapPublish")
         delegate?.didTapPublish()
     }
 }

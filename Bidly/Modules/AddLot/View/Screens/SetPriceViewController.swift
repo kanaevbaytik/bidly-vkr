@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 class SetPriceViewController: UIViewController {
     weak var delegate: LotStepDelegate?
     private let viewModel: CreateLotViewModel
@@ -98,7 +96,17 @@ class SetPriceViewController: UIViewController {
     }
 
     @objc private func nextButtonTapped() {
-        if isFormValid {
+        guard
+            let priceText = priceField.text,
+            let price = Double(priceText),
+            isFormValid
+        else {
+            return
+        }
+
+        let success = viewModel.setPricing(startPrice: price)
+
+        if success {
             delegate?.goToNextPage()
         }
     }

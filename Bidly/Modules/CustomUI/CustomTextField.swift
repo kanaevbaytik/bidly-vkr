@@ -14,6 +14,7 @@ class CustomTextField: UITextField {
         self.originalPlaceholder = placeholder
         super.init(frame: .zero)
         setupTextField()
+        setupToolbar()
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +49,20 @@ class CustomTextField: UITextField {
         if let gradientLayer = gradientLayer {
             layer.insertSublayer(gradientLayer, at: 0)
         }
+    }
+    private func setupToolbar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonTapped))
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc private func doneButtonTapped() {
+        self.resignFirstResponder()
     }
     
     override func layoutSubviews() {

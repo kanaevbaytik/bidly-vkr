@@ -82,32 +82,36 @@ class UploadImagesViewController: UIViewController {
     }
 
 
-       @objc private func addPhotoTapped() {
-           let picker = UIImagePickerController()
-           picker.sourceType = .photoLibrary
-           picker.delegate = self
-           present(picker, animated: true)
-       }
+    @objc private func addPhotoTapped() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        present(picker, animated: true)
+    }
 
-       private func updateNextButtonState() {
-           nextButton.updateState(isEnabled: !uploadedPhotos.isEmpty)
-       }
+    private func updateNextButtonState() {
+        nextButton.updateState(isEnabled: !uploadedPhotos.isEmpty)
+    }
 
-       @objc private func nextButtonTapped() {
-           if !uploadedPhotos.isEmpty {
-               delegate?.goToNextPage()
-           }
-       }
-   }
+    @objc private func nextButtonTapped() {
+        if !uploadedPhotos.isEmpty {
+            let success = viewModel.setImages(uploadedPhotos)
+            if success {
+                delegate?.goToNextPage()
+            }
+        }
+    }
+}
 
-   extension UploadImagesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           picker.dismiss(animated: true)
-           
-           if let image = info[.originalImage] as? UIImage {
-               uploadedPhotos.append(image)
-               uploadedPhotosContainer.addPhoto(image)
-               updateNextButtonState()
-           }
-       }
-   }
+extension UploadImagesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        if let image = info[.originalImage] as? UIImage {
+            uploadedPhotos.append(image)
+            uploadedPhotosContainer.addPhoto(image)
+            updateNextButtonState()
+        }
+    }
+}
+

@@ -50,6 +50,7 @@ class DescriptionViewController: UIViewController {
 
         setupConstraints()
         setupActions()
+        addDoneButtonToTextView()
 
         nextButton.updateState(isEnabled: false)
     }
@@ -77,9 +78,27 @@ class DescriptionViewController: UIViewController {
     }
 
     @objc private func nextButtonTapped() {
-        delegate?.goToNextPage()
-        print("Описание отправлено")
+        let trimmedText = descriptionTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if viewModel.setDescription(trimmedText) {
+            delegate?.goToNextPage()
+            print("описание отправлено!")
+        }
     }
+    private func addDoneButtonToTextView() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonTapped))
+        
+        toolbar.setItems([flexSpace, doneButton], animated: false)
+        descriptionTextView.inputAccessoryView = toolbar
+    }
+
+    @objc private func doneButtonTapped() {
+        descriptionTextView.resignFirstResponder()
+    }
+
 }
 
 // MARK: - UITextViewDelegate

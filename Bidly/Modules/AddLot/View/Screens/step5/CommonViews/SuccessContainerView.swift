@@ -10,6 +10,8 @@ import UIKit
 protocol SuccessContainerViewDelegate: AnyObject {
     func didTapBackToHome()
     func didTapPublish()
+    func submitLot() //снести потом
+    func fetchTestPosts() // снести потом
 }
 
 class SuccessContainerView: UIView {
@@ -100,6 +102,6 @@ class SuccessContainerView: UIView {
     
     @objc private func publishTapped() {
         print("Кнопка нажата - didTapPublish")
-        delegate?.didTapPublish()
+        delegate?.fetchTestPosts()
     }
 }

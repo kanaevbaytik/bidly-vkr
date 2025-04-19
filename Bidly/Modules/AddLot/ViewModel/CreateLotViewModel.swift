@@ -97,7 +97,91 @@ extension DateFormatter {
     }()
 }
 
+//MARK: - Модель для локального хранилища (в будущем нужно снести)
+
+extension CreateLotViewModel {
+    func toStorageModel() -> LotStorageModel? {
+        guard
+            let title = title,
+            let category = category,
+            let startPrice = startPrice,
+            let minBidStep = minBidStep,
+            let endDate = endDate,
+            let lotDescription = lotDescription
+        else { return nil }
+        
+        let imageData = images.compactMap { $0.jpegData(compressionQuality: 0.7) }
+        
+        let dateString = DateFormatter.lotDateFormatter.string(from: endDate)
+        
+        return LotStorageModel(
+            title: title,
+            category: category,
+            startPrice: startPrice,
+            minBidStep: minBidStep,
+            endDate: dateString,
+            lotDescription: lotDescription,
+            imageData: imageData
+        )
+    }
+}
+
+//MARK: - Модель для отправки DTO
+
+extension CreateLotViewModel {
+    func toCreateRequest() -> CreateLotRequest? {
+        guard
+            let title = title,
+            let category = category,
+            let startPrice = startPrice,
+            let minBidStep = minBidStep,
+            let endDate = endDate,
+            let lotDescription = lotDescription
+        else { return nil }
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let endDateString = formatter.string(from: endDate)
+
+        let imagesBase64 = images.compactMap { image -> String? in
+            guard let data = image.jpegData(compressionQuality: 0.8) else { return nil }
+            return data.base64EncodedString()
+        }
+
+        return CreateLotRequest(
+            title: title,
+            category: category,
+            startPrice: startPrice,
+            minBidStep: minBidStep,
+            endDate: endDateString,
+            description: lotDescription,
+            imagesBase64: imagesBase64
+        )
+    }
+}
+
+//MARK: - Моковые структуры для теста сетевого слоя!
+struct CreateLotRequest: Codable {
+    let title: String
+    let category: String
+    let startPrice: Double
+    let minBidStep: Double
+    let endDate: String
+    let description: String
+    let imagesBase64: [String]
+}
+
+struct ServerResponseModel: Codable {
+    let message: String
+    let lotId: Int?
+}
 
 
+struct Post: Codable {
+    let userId: Int
+    let id: Int
+    let title: String
+    let body: String
+}
 
 

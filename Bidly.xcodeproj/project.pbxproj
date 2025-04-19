@@ -34,6 +34,9 @@
 		CE8D07AC2D77833500927D78 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07AB2D77833500927D78 /* Product.swift */; };
 		CEE445412DAEF77E00F33366 /* LotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445402DAEF77E00F33366 /* LotService.swift */; };
 		CEE445442DAFAFD100F33366 /* SellerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445432DAFAFD100F33366 /* SellerInfoView.swift */; };
+		CEE445462DB18CC300F33366 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445452DB18CC300F33366 /* Date.swift */; };
+		CEE445512DB3BE1400F33366 /* DatePickerInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445502DB3BE1400F33366 /* DatePickerInputView.swift */; };
+		CEE445532DB3BE3000F33366 /* DropdownHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445522DB3BE3000F33366 /* DropdownHandler.swift */; };
 		CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */; };
 		CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */; };
 		CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */; };
@@ -78,6 +81,9 @@
 		CE8D07AB2D77833500927D78 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CEE445402DAEF77E00F33366 /* LotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotService.swift; sourceTree = "<group>"; };
 		CEE445432DAFAFD100F33366 /* SellerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInfoView.swift; sourceTree = "<group>"; };
+		CEE445452DB18CC300F33366 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CEE445502DB3BE1400F33366 /* DatePickerInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInputView.swift; sourceTree = "<group>"; };
+		CEE445522DB3BE3000F33366 /* DropdownHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownHandler.swift; sourceTree = "<group>"; };
 		CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVIew.swift; sourceTree = "<group>"; };
 		CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -115,11 +121,11 @@
 		CE87F0FA2D888F4000E1203F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */,
-				CEE78A822D7E17670007C8D5 /* SetPriceViewController.swift */,
-				CE87F0FE2D8890F600E1203F /* UploadImagesViewController.swift */,
-				CE87F1002D88910800E1203F /* DescriptionViewController.swift */,
-				CE87F10B2D91E3EB00E1203F /* SuccessViewController.swift */,
+				CEE4454D2DB3BC3C00F33366 /* step5 */,
+				CEE4454C2DB3BC2A00F33366 /* step4 */,
+				CEE4454B2DB3BC1B00F33366 /* step3 */,
+				CEE4454A2DB3BC0500F33366 /* step2 */,
+				CEE445492DB3ADBA00F33366 /* step1 */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -128,19 +134,17 @@
 			isa = PBXGroup;
 			children = (
 				CE87F10F2D91EDD800E1203F /* StepProgressView */,
-				CE87F1062D91BA1400E1203F /* UploadPhotosView */,
-				CE87F10D2D91E41400E1203F /* SuccessContainerView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
 		};
-		CE87F1062D91BA1400E1203F /* UploadPhotosView */ = {
+		CE87F1062D91BA1400E1203F /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
 				CE87F1072D91BA5600E1203F /* UploadedPhotosContainer.swift */,
 				CE87F1092D91BA7D00E1203F /* UploadPhotoContainer.swift */,
 			);
-			path = UploadPhotosView;
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 		CE87F10F2D91EDD800E1203F /* StepProgressView */ = {
@@ -265,6 +269,7 @@
 			children = (
 				CE8D07922D74EE1A00927D78 /* UIView.swift */,
 				CEE78A842D7E2E040007C8D5 /* UIColor.swift */,
+				CEE445452DB18CC300F33366 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,6 +323,66 @@
 			isa = PBXGroup;
 			children = (
 				CEE445432DAFAFD100F33366 /* SellerInfoView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		CEE445492DB3ADBA00F33366 /* step1 */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4454F2DB3BCB100F33366 /* CommonViews */,
+				CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */,
+			);
+			path = step1;
+			sourceTree = "<group>";
+		};
+		CEE4454A2DB3BC0500F33366 /* step2 */ = {
+			isa = PBXGroup;
+			children = (
+				CEE78A822D7E17670007C8D5 /* SetPriceViewController.swift */,
+			);
+			path = step2;
+			sourceTree = "<group>";
+		};
+		CEE4454B2DB3BC1B00F33366 /* step3 */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F0FE2D8890F600E1203F /* UploadImagesViewController.swift */,
+				CE87F1062D91BA1400E1203F /* CommonViews */,
+			);
+			path = step3;
+			sourceTree = "<group>";
+		};
+		CEE4454C2DB3BC2A00F33366 /* step4 */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F1002D88910800E1203F /* DescriptionViewController.swift */,
+			);
+			path = step4;
+			sourceTree = "<group>";
+		};
+		CEE4454D2DB3BC3C00F33366 /* step5 */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4454E2DB3BC8C00F33366 /* CommonViews */,
+				CE87F10B2D91E3EB00E1203F /* SuccessViewController.swift */,
+			);
+			path = step5;
+			sourceTree = "<group>";
+		};
+		CEE4454E2DB3BC8C00F33366 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE87F10D2D91E41400E1203F /* SuccessContainerView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		CEE4454F2DB3BCB100F33366 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEE445502DB3BE1400F33366 /* DatePickerInputView.swift */,
+				CEE445522DB3BE3000F33366 /* DropdownHandler.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -494,6 +559,7 @@
 				CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */,
 				CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */,
 				CEE78A892D80D4E80007C8D5 /* AuctionItem.swift in Sources */,
+				CEE445512DB3BE1400F33366 /* DatePickerInputView.swift in Sources */,
 				CE8D07902D74EAB200927D78 /* AuthViewController.swift in Sources */,
 				CEE78A832D7E17670007C8D5 /* SetPriceViewController.swift in Sources */,
 				CEE78A852D7E2E040007C8D5 /* UIColor.swift in Sources */,
@@ -514,8 +580,10 @@
 				CE8D07AA2D77832900927D78 /* Category.swift in Sources */,
 				CEE78A6F2D7DBD940007C8D5 /* MyBidsViewController.swift in Sources */,
 				CE8D079D2D762F9B00927D78 /* AuthViewModel.swift in Sources */,
+				CEE445462DB18CC300F33366 /* Date.swift in Sources */,
 				CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */,
 				CE8D07AC2D77833500927D78 /* Product.swift in Sources */,
+				CEE445532DB3BE3000F33366 /* DropdownHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

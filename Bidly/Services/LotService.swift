@@ -10,9 +10,8 @@ import Foundation
 class LotService {
     static let shared = LotService()
 
-    func publishLot(title: String, price: Double, completion: @escaping (Result<Void, Error>) -> Void) {
-        // Пример URL — замени на настоящий адрес своего сервера
-        guard let url = URL(string: "https://postman-echo.com/post") else {
+    func publishLot(viewModel: CreateLotViewModel, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string: "https://httpbin.org/post") else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1)))
             return
         }
@@ -22,8 +21,12 @@ class LotService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         let payload: [String: Any] = [
-            "title": title,
-            "price": price
+            "title": viewModel.title ?? "",
+            "category": viewModel.category ?? "",
+            "price": viewModel.startPrice ?? 0,
+            "minBidStep": viewModel.minBidStep ?? 0,
+            "endDate": viewModel.endDate?.iso8601String() ?? "",
+            "description": viewModel.lotDescription ?? ""
         ]
 
         do {
@@ -44,8 +47,8 @@ class LotService {
                 completion(.failure(NSError(domain: "Invalid response", code: -2)))
                 return
             }
-
             completion(.success(()))
         }.resume()
     }
 }
+

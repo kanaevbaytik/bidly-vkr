@@ -62,10 +62,16 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
         print("🔄 Публикуем лот...")
 
         // Пример данных — потом ты их получишь из ViewModel или input
-        let title = "iPhone 12"
-        let price = 100.0
+        guard
+            let title = viewModel.title,
+            let price = viewModel.startPrice
+        else {
+            print("❌ Ошибка: отсутствуют обязательные поля")
+            return
+        }
 
-        LotService.shared.publishLot(title: title, price: price) { [weak self] result in
+
+        LotService.shared.publishLot(viewModel: viewModel) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:

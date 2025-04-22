@@ -1,0 +1,6 @@
+framework module Pods_Bidly {
+  umbrella header "Pods-Bidly-umbrella.h"
+
+  export *
+  module * { export * }
+}

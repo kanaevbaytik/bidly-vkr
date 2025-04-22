@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3E138E2DB7FC9D00FF4E48 /* LotImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E138D2DB7FC9D00FF4E48 /* LotImageCarouselView.swift */; };
+		CE3E13902DB7FCC300FF4E48 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E138F2DB7FCC300FF4E48 /* ImageCell.swift */; };
+		CE3E13922DB7FCFD00FF4E48 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E13912DB7FCFD00FF4E48 /* ThumbnailCell.swift */; };
 		CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F12D84A2E400E1203F /* LotViewController.swift */; };
 		CE87F0F72D8739AD00E1203F /* StepProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F62D8739AD00E1203F /* StepProgressView.swift */; };
 		CE87F0FD2D8890B600E1203F /* CreateLotPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */; };
@@ -71,6 +74,9 @@
 /* Begin PBXFileReference section */
 		4FF7FFEBCBC3B96202F859BC /* Pods-Bidly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bidly.debug.xcconfig"; path = "Target Support Files/Pods-Bidly/Pods-Bidly.debug.xcconfig"; sourceTree = "<group>"; };
 		88005E98CE6558274D00A835 /* Pods_Bidly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bidly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3E138D2DB7FC9D00FF4E48 /* LotImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotImageCarouselView.swift; sourceTree = "<group>"; };
+		CE3E138F2DB7FCC300FF4E48 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		CE3E13912DB7FCFD00FF4E48 /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		CE87F0F12D84A2E400E1203F /* LotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotViewController.swift; sourceTree = "<group>"; };
 		CE87F0F62D8739AD00E1203F /* StepProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressView.swift; sourceTree = "<group>"; };
 		CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLotPageViewController.swift; sourceTree = "<group>"; };
@@ -262,7 +268,7 @@
 				CEE78A692D7DB9430007C8D5 /* TabBar */,
 				CE8D078E2D74E96300927D78 /* Profile */,
 				CE8D078D2D74E95600927D78 /* AddLot */,
-				CE8D078C2D74E94E00927D78 /* Home */,
+				CE8D078C2D74E94E00927D78 /* Main */,
 				CE8D07942D74F68100927D78 /* CustomUI */,
 			);
 			path = Modules;
@@ -295,14 +301,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		CE8D078C2D74E94E00927D78 /* Home */ = {
+		CE8D078C2D74E94E00927D78 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				CE8D07A82D77830900927D78 /* Model */,
 				CE8D07A72D7782F800927D78 /* ViewModel */,
 				CE8D07A62D7782EB00927D78 /* View */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CE8D078D2D74E95600927D78 /* AddLot */ = {
@@ -382,6 +388,9 @@
 			isa = PBXGroup;
 			children = (
 				CEE445432DAFAFD100F33366 /* SellerInfoView.swift */,
+				CE3E138D2DB7FC9D00FF4E48 /* LotImageCarouselView.swift */,
+				CE3E138F2DB7FCC300FF4E48 /* ImageCell.swift */,
+				CE3E13912DB7FCFD00FF4E48 /* ThumbnailCell.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -679,6 +688,7 @@
 				CE8D07932D74EE1A00927D78 /* UIView.swift in Sources */,
 				CEE4456A2DB55BCA00F33366 /* NotificationCell.swift in Sources */,
 				CEE4455A2DB40CCE00F33366 /* FavoritesViewController.swift in Sources */,
+				CE3E138E2DB7FC9D00FF4E48 /* LotImageCarouselView.swift in Sources */,
 				CE87F10E2D91E41400E1203F /* SuccessContainerView.swift in Sources */,
 				CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */,
 				CE87F1082D91BA5600E1203F /* UploadedPhotosContainer.swift in Sources */,
@@ -695,6 +705,7 @@
 				CE8D079F2D76305E00927D78 /* APIService.swift in Sources */,
 				CE87F0FF2D8890F600E1203F /* UploadImagesViewController.swift in Sources */,
 				CEE445642DB4179800F33366 /* LotStorageService.swift in Sources */,
+				CE3E13902DB7FCC300FF4E48 /* ImageCell.swift in Sources */,
 				CE8D07962D74F6A200927D78 /* CustomTextField.swift in Sources */,
 				CEE4455E2DB40CEC00F33366 /* SupportViewController.swift in Sources */,
 				CEE78A752D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift in Sources */,
@@ -703,6 +714,7 @@
 				CEE445412DAEF77E00F33366 /* LotService.swift in Sources */,
 				CEE78A722D7DBDB50007C8D5 /* ProfileViewController.swift in Sources */,
 				CEE445582DB40CBB00F33366 /* AdressViewController.swift in Sources */,
+				CE3E13922DB7FCFD00FF4E48 /* ThumbnailCell.swift in Sources */,
 				CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */,
 				CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */,
 				CE8D07822D74E84E00927D78 /* SceneDelegate.swift in Sources */,

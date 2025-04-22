@@ -57,7 +57,7 @@ askldjf;lsakdjfsd
 als;djf;laskjdf
 a;lskjdf;aslkdfj
 """, sellerName: "jessy pinkman", imageNames: ["example1", "example2", "example3"]),
-        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: [";akdj", "aksjd", "kasjd;lf"])
+        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: ["mock1", "mock2", "mock3", "mock4"])
     ]
     
     override func viewDidLoad() {
@@ -155,8 +155,8 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedAuctionItem = auctionItems[indexPath.item]
-        let lotVC = LotViewController(auctionItem: selectedAuctionItem)
-        navigationController?.pushViewController(lotVC, animated: true)
+        let item = auctionItems[indexPath.item]
+        let vc = LotViewController(auctionItem: item)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

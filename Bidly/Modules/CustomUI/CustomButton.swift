@@ -8,9 +8,10 @@
 import UIKit
 
 class CustomButton: UIButton {
-    init(title: String) {
+    init(title: String, isActive: Bool = false) {
         super.init(frame: .zero)
         setupButton(title: title)
+        updateState(isEnabled: isActive)
     }
 
     required init?(coder: NSCoder) {
@@ -23,19 +24,15 @@ class CustomButton: UIButton {
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 12
         titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
-        updateState(isEnabled: false) // Начальное состояние — неактивное
+        heightAnchor.constraint(equalToConstant: 50).isActive = true // Фиксированная высота
     }
 
     func updateState(isEnabled: Bool) {
         self.isEnabled = isEnabled
-        self.alpha = isEnabled ? 1.0 : 0.5
-        self.backgroundColor = isEnabled ? UIColor.systemBlue : UIColor.lightGray
+        UIView.animate(withDuration: 0.2) {
+            self.alpha = isEnabled ? 1.0 : 0.7
+            self.backgroundColor = isEnabled ? UIColor(hex: "#56549EFF") : UIColor.systemGray4
+        }
     }
 }
-//nextButton.setTitle("Далее", for: .normal)
-//nextButton.backgroundColor = .lightGray
-//nextButton.setTitleColor(.white, for: .disabled)
-//nextButton.setTitleColor(.black, for: .normal)
-//nextButton.layer.cornerRadius = 8
-//nextButton.isEnabled = false
-//nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+

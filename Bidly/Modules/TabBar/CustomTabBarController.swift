@@ -16,15 +16,15 @@ class CustomTabBarController: UITabBarController {
         let notificationsVC = UINavigationController(rootViewController: NotificationsViewController())
         let profileVC = UINavigationController(rootViewController: ProfileViewController())
         
-        mainVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
-        myBidsVC.tabBarItem = UITabBarItem(title: "Bids", image: UIImage(systemName: "dollarsign.circle"), selectedImage: UIImage(systemName: "dollarsign.circle.fill"))
+        mainVC.tabBarItem = UITabBarItem(title: "Главное", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        myBidsVC.tabBarItem = UITabBarItem(title: "Чат", image: UIImage(systemName: "message"), selectedImage: UIImage(systemName: "message.fill"))
         addLotVC.tabBarItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
-        notificationsVC.tabBarItem = UITabBarItem(title: "Activity", image: UIImage(systemName: "bell"), selectedImage: UIImage(systemName: "bell.fill"))
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+        notificationsVC.tabBarItem = UITabBarItem(title: "Уведомления", image: UIImage(systemName: "bell"), selectedImage: UIImage(systemName: "bell.fill"))
+        profileVC.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
         
         self.viewControllers = [mainVC, myBidsVC, addLotVC, notificationsVC, profileVC]
         
-        tabBar.tintColor = .systemPurple
+        tabBar.tintColor = UIColor(hex: "#AEA1E5FF")
         
         setupMiddleButton()
     }
@@ -33,9 +33,9 @@ class CustomTabBarController: UITabBarController {
         let middleButton = UIButton()
         middleButton.translatesAutoresizingMaskIntoConstraints = false
         middleButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        middleButton.backgroundColor = UIColor.systemPurple
+        middleButton.backgroundColor = UIColor(hex: "#56549EFF")
         middleButton.tintColor = .white
-        middleButton.layer.cornerRadius = 28
+        middleButton.layer.cornerRadius = 20
         middleButton.layer.shadowColor = UIColor.black.cgColor
         middleButton.layer.shadowOpacity = 0.3
         middleButton.layer.shadowOffset = CGSize(width: 0, height: 4)

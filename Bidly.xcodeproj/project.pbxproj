@@ -10,6 +10,8 @@
 		CE3E138E2DB7FC9D00FF4E48 /* LotImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E138D2DB7FC9D00FF4E48 /* LotImageCarouselView.swift */; };
 		CE3E13902DB7FCC300FF4E48 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E138F2DB7FCC300FF4E48 /* ImageCell.swift */; };
 		CE3E13922DB7FCFD00FF4E48 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E13912DB7FCFD00FF4E48 /* ThumbnailCell.swift */; };
+		CE3E13942DB96B4300FF4E48 /* BidDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E13932DB96B4300FF4E48 /* BidDialogViewController.swift */; };
+		CE3E13962DBB8A7600FF4E48 /* AuctionBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E13952DBB8A7600FF4E48 /* AuctionBannerView.swift */; };
 		CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F12D84A2E400E1203F /* LotViewController.swift */; };
 		CE87F0F72D8739AD00E1203F /* StepProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F62D8739AD00E1203F /* StepProgressView.swift */; };
 		CE87F0FD2D8890B600E1203F /* CreateLotPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */; };
@@ -77,6 +79,8 @@
 		CE3E138D2DB7FC9D00FF4E48 /* LotImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotImageCarouselView.swift; sourceTree = "<group>"; };
 		CE3E138F2DB7FCC300FF4E48 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		CE3E13912DB7FCFD00FF4E48 /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
+		CE3E13932DB96B4300FF4E48 /* BidDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidDialogViewController.swift; sourceTree = "<group>"; };
+		CE3E13952DBB8A7600FF4E48 /* AuctionBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionBannerView.swift; sourceTree = "<group>"; };
 		CE87F0F12D84A2E400E1203F /* LotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotViewController.swift; sourceTree = "<group>"; };
 		CE87F0F62D8739AD00E1203F /* StepProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressView.swift; sourceTree = "<group>"; };
 		CE87F0FC2D8890B600E1203F /* CreateLotPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLotPageViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			children = (
 				CEE445422DAFAFB800F33366 /* CommonViews */,
 				CE87F0F12D84A2E400E1203F /* LotViewController.swift */,
+				CE3E13932DB96B4300FF4E48 /* BidDialogViewController.swift */,
 			);
 			path = AuctionItem;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 			children = (
 				CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */,
 				CEE78A862D80D1150007C8D5 /* AuctionItemCell.swift */,
+				CE3E13952DBB8A7600FF4E48 /* AuctionBannerView.swift */,
 			);
 			path = HelpersView;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				CE3E138E2DB7FC9D00FF4E48 /* LotImageCarouselView.swift in Sources */,
 				CE87F10E2D91E41400E1203F /* SuccessContainerView.swift in Sources */,
 				CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */,
+				CE3E13962DBB8A7600FF4E48 /* AuctionBannerView.swift in Sources */,
 				CE87F1082D91BA5600E1203F /* UploadedPhotosContainer.swift in Sources */,
 				CE87F1052D9088C900E1203F /* StepProgressHeaderView.swift in Sources */,
 				CEE78A7D2D7E13550007C8D5 /* CreateLotViewModel.swift in Sources */,
@@ -730,6 +737,7 @@
 				CEE445672DB55B5A00F33366 /* NotificationModel.swift in Sources */,
 				CEE445462DB18CC300F33366 /* Date.swift in Sources */,
 				CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */,
+				CE3E13942DB96B4300FF4E48 /* BidDialogViewController.swift in Sources */,
 				CE8D07AC2D77833500927D78 /* Product.swift in Sources */,
 				CEE445532DB3BE3000F33366 /* DropdownHandler.swift in Sources */,
 				CEE445562DB40CA000F33366 /* MyLotsViewController.swift in Sources */,

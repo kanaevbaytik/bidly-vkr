@@ -7,7 +7,7 @@ class EnterLotDetailsViewController: UIViewController, DropdownHandlerDelegate, 
     private let titleField = CustomTextField(placeholder: "Enter title")
     private let categoryField = CustomTextField(placeholder: "Select category")
     private let dateField = CustomTextField(placeholder: "Выберите дату окончания")
-    private let nextButton = CustomButton(title: "Next")
+    private let nextButton = CustomButton(title: "Далее")
     
     private var dropdownHandler: DropdownHandler?
     private var datePickerHandler: DatePickerHandler?

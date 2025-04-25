@@ -15,6 +15,7 @@ class StepProgressView: UIView {
     }
     
     private var stepCircles: [UIView] = []
+    private var stepLabels: [UILabel] = []
     private var stepLines: [UIView] = []
     
     init(steps: Int) {
@@ -31,47 +32,64 @@ class StepProgressView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 8
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 0 // Убираем промежутки между элементами
         
         for i in 0..<steps {
+            // Создаем контейнер для круга с тенью
+            let shadowContainer = UIView()
+            shadowContainer.translatesAutoresizingMaskIntoConstraints = false
+            
+            // Настройка тени
+            shadowContainer.layer.shadowColor = UIColor.black.cgColor
+            shadowContainer.layer.shadowOffset = CGSize(width: 0, height: 2)
+            shadowContainer.layer.shadowRadius = 2
+            shadowContainer.layer.shadowOpacity = 0.2
+            shadowContainer.layer.cornerRadius = 12
+            
+            // Круг шага
             let circleView = UIView()
             circleView.layer.cornerRadius = 12
-            circleView.layer.borderWidth = 2
-            circleView.layer.borderColor = UIColor.gray.cgColor
-            circleView.backgroundColor = .white
+            circleView.clipsToBounds = true
             circleView.translatesAutoresizingMaskIntoConstraints = false
             
+            // Номер шага
             let stepLabel = UILabel()
             stepLabel.text = "\(i + 1)"
             stepLabel.textAlignment = .center
             stepLabel.font = .systemFont(ofSize: 14, weight: .medium)
+            stepLabel.translatesAutoresizingMaskIntoConstraints = false
             
             circleView.addSubview(stepLabel)
-            stepLabel.translatesAutoresizingMaskIntoConstraints = false
+            shadowContainer.addSubview(circleView)
+            
             NSLayoutConstraint.activate([
+                circleView.widthAnchor.constraint(equalToConstant: 24),
+                circleView.heightAnchor.constraint(equalToConstant: 24),
+                circleView.centerXAnchor.constraint(equalTo: shadowContainer.centerXAnchor),
+                circleView.centerYAnchor.constraint(equalTo: shadowContainer.centerYAnchor),
+                
                 stepLabel.centerXAnchor.constraint(equalTo: circleView.centerXAnchor),
                 stepLabel.centerYAnchor.constraint(equalTo: circleView.centerYAnchor)
             ])
             
-            circleView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-            circleView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-            
             stepCircles.append(circleView)
-            stackView.addArrangedSubview(circleView)
+            stepLabels.append(stepLabel)
+            stackView.addArrangedSubview(shadowContainer)
             
-            // Добавляем линию только если это не последний шаг
+            // Добавляем соединительную линию (кроме последнего шага)
             if i < steps - 1 {
                 let lineView = UIView()
-                lineView.backgroundColor = .gray
+                lineView.backgroundColor = UIColor(hex: "#E5E5EAFF") // Светло-серый цвет
+                lineView.translatesAutoresizingMaskIntoConstraints = false
+                
+                NSLayoutConstraint.activate([
+                    lineView.heightAnchor.constraint(equalToConstant: 1), // Тонкая линия
+                    lineView.widthAnchor.constraint(equalToConstant: 24) // Фиксированная ширина
+                ])
+                
                 stepLines.append(lineView)
                 stackView.addArrangedSubview(lineView)
-                
-                lineView.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    lineView.heightAnchor.constraint(equalToConstant: 2),
-                    lineView.widthAnchor.constraint(equalToConstant: 24)
-                ])
             }
         }
         
@@ -80,27 +98,24 @@ class StepProgressView: UIView {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         updateSteps()
     }
-
-
     
     private func updateSteps() {
         for (index, circle) in stepCircles.enumerated() {
-            if index < currentStep {
-                circle.backgroundColor = .purple
-                circle.layer.borderColor = UIColor.purple.cgColor
+            let isActive = index < currentStep
+            
+            if isActive {
+                circle.backgroundColor = UIColor(hex: "#56549EFF") // Фиолетовый
+                stepLabels[index].textColor = .white // Белый текст для активного шага
             } else {
-                circle.backgroundColor = .white
-                circle.layer.borderColor = UIColor.gray.cgColor
+                circle.backgroundColor = UIColor(hex: "#E5E5EAFF") // Серый
+                stepLabels[index].textColor = .darkGray // Темно-серый текст для неактивного
             }
-        }
-        
-        for (index, line) in stepLines.enumerated() {
-            line.backgroundColor = index < currentStep - 1 ? .purple : .gray
         }
     }
     

@@ -42,16 +42,7 @@ class LotViewController: UIViewController {
     private let endtimeLabel = UILabel()
     private let descriptionLabel = UILabel()
     
-    private let bidButton: UIButton = {
-        let button = UIKit.UIButton(type: .system)
-        button.setTitle("Сделать ставку", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.backgroundColor = .systemBlue
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 12
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return button
-    }()
+    private let bidButton = CustomButton(title: "Сделать ставку", isActive: true)
     
     init(auctionItem: AuctionItem) {
         self.auctionItem = auctionItem
@@ -74,28 +65,24 @@ class LotViewController: UIViewController {
     private func setupNavigationBar() {
         title = "Товар"
 
-        // Share button
         var shareConfig = UIButton.Configuration.plain()
         shareConfig.image = UIImage(systemName: "square.and.arrow.up")
         shareConfig.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6)
         let shareButton = UIButton(configuration: shareConfig)
         shareButton.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
 
-        // Like button
         var likeConfig = UIButton.Configuration.plain()
         likeConfig.image = UIImage(systemName: "heart")
         likeConfig.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6)
         let likeButton = UIButton(configuration: likeConfig)
         likeButton.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
 
-        // More button
         var moreConfig = UIButton.Configuration.plain()
         moreConfig.image = UIImage(systemName: "ellipsis")
         moreConfig.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6)
         let moreButton = UIButton(configuration: moreConfig)
         moreButton.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
 
-        // Добавляем кнопки в top bar
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(customView: moreButton),
             UIBarButtonItem(customView: likeButton),
@@ -143,8 +130,9 @@ class LotViewController: UIViewController {
         endtimeLabel.textColor = .gray
         descriptionLabel.font = .systemFont(ofSize: 16)
         descriptionLabel.textColor = .darkGray
+        bidButton.isEnabled = true
+        bidButton.addTarget(self, action: #selector(bidButtonTapped), for: .touchUpInside)
             
-        // Добавляем карусель с миниатюрами
         contentStackView.addArrangedSubview(imageCarouselView)
         imageCarouselView.heightAnchor.constraint(equalToConstant: 380).isActive = true // 300 + 60 + spacing
         
@@ -183,5 +171,14 @@ class LotViewController: UIViewController {
 
     @objc private func moreTapped() {
         print("More tapped")
+    }
+    
+    @objc private func bidButtonTapped() {
+        let dialog = BidDialogViewController(currentBid: auctionItem.lastBid, minStep: Int(Double(auctionItem.startPrice) * 0.05))
+        dialog.onConfirm = { [weak self] newBid in
+            print("Ставка подтверждена: \(newBid) сом")
+            // тут ты можешь отправить ставку на сервер или обновить UI
+        }
+        present(dialog, animated: true)
     }
 }

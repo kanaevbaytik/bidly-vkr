@@ -17,13 +17,8 @@ class MainViewController: UIViewController {
         return button
     }()
 
-    private let bannerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 0.34, green: 0.33, blue: 0.62, alpha: 1.0)
-        view.layer.cornerRadius = 12
-        return view
-    }()
-    
+    private let bannerView = AuctionBannerView()
+
     private let categoriesView = CategoriesView()
     
     private let popularLabel: UILabel = {
@@ -51,13 +46,13 @@ class MainViewController: UIViewController {
     }()
 
     private var auctionItems: [AuctionItem] = [
-        AuctionItem(imageName: "example1", title: "iPhone 13", category: "Электроника", lastBid: 25000, endDate: Date(), description: """
+        AuctionItem(imageName: "example1", title: "iPhone 13", category: "Электроника", startPrice: 25000, lastBid: 25000, endDate: Date(), description: """
 lk;asdjfals;kjdf
 askldjf;lsakdjfsd
 als;djf;laskjdf
 a;lskjdf;aslkdfj
 """, sellerName: "jessy pinkman", imageNames: ["example1", "example2", "example3"]),
-        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: ["mock1", "mock2", "mock3", "mock4"])
+        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", startPrice: 80000, lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: ["mock1", "mock2", "mock3", "mock4"])
     ]
     
     override func viewDidLoad() {
@@ -77,7 +72,6 @@ a;lskjdf;aslkdfj
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-
         contentView.addSubviews(bannerView, categoriesView, popularLabel, collectionView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -121,8 +115,8 @@ a;lskjdf;aslkdfj
     }
     
     private func setupBannerTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bannerTapped))
         bannerView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bannerTapped))
         bannerView.addGestureRecognizer(tapGesture)
     }
 
@@ -160,3 +154,4 @@ extension MainViewController: UICollectionViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+

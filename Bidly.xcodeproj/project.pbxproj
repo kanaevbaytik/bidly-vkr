@@ -33,10 +33,17 @@
 		CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07972D74F6BF00927D78 /* CustomButton.swift */; };
 		CE8D079B2D762C9600927D78 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079A2D762C9600927D78 /* RegViewController.swift */; };
 		CE8D079D2D762F9B00927D78 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079C2D762F9B00927D78 /* AuthViewModel.swift */; };
-		CE8D079F2D76305E00927D78 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079E2D76305E00927D78 /* APIService.swift */; };
+		CE8D079F2D76305E00927D78 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D079E2D76305E00927D78 /* KeychainHelper.swift */; };
 		CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A02D7773B000927D78 /* MainViewController.swift */; };
 		CE8D07AA2D77832900927D78 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A92D77832900927D78 /* Category.swift */; };
 		CE8D07AC2D77833500927D78 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07AB2D77833500927D78 /* Product.swift */; };
+		CEB3BAD92DBE88CE0044FF6E /* CategoryAuctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */; };
+		CEB3BADD2DBE97B60044FF6E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BADC2DBE97B60044FF6E /* AuthService.swift */; };
+		CEB3BAE32DBEAA9B0044FF6E /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAE22DBEAA9B0044FF6E /* TokenManager.swift */; };
+		CEB3BAE92DBEC4D40044FF6E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAE82DBEC4D40044FF6E /* APIError.swift */; };
+		CEB3BAEB2DBEC4E70044FF6E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAEA2DBEC4E70044FF6E /* NetworkClient.swift */; };
+		CEB3BAED2DBEC5020044FF6E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAEC2DBEC5020044FF6E /* Endpoint.swift */; };
+		CEB3BAEF2DBEC5680044FF6E /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAEE2DBEC5680044FF6E /* AuthInterceptor.swift */; };
 		CEE445412DAEF77E00F33366 /* LotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445402DAEF77E00F33366 /* LotService.swift */; };
 		CEE445442DAFAFD100F33366 /* SellerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445432DAFAFD100F33366 /* SellerInfoView.swift */; };
 		CEE445462DB18CC300F33366 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445452DB18CC300F33366 /* Date.swift */; };
@@ -104,10 +111,17 @@
 		CE8D07972D74F6BF00927D78 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CE8D079A2D762C9600927D78 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
 		CE8D079C2D762F9B00927D78 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		CE8D079E2D76305E00927D78 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CE8D079E2D76305E00927D78 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		CE8D07A02D7773B000927D78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE8D07A92D77832900927D78 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CE8D07AB2D77833500927D78 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAuctionsViewController.swift; sourceTree = "<group>"; };
+		CEB3BADC2DBE97B60044FF6E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CEB3BAE22DBEAA9B0044FF6E /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		CEB3BAE82DBEC4D40044FF6E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CEB3BAEA2DBEC4E70044FF6E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CEB3BAEC2DBEC5020044FF6E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CEB3BAEE2DBEC5680044FF6E /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		CEE445402DAEF77E00F33366 /* LotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotService.swift; sourceTree = "<group>"; };
 		CEE445432DAFAFD100F33366 /* SellerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInfoView.swift; sourceTree = "<group>"; };
 		CEE445452DB18CC300F33366 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -243,7 +257,7 @@
 		CE8D07802D74E84E00927D78 /* Bidly */ = {
 			isa = PBXGroup;
 			children = (
-				CE8D078A2D74E91800927D78 /* Services */,
+				CE8D078A2D74E91800927D78 /* Networking */,
 				CE8D07892D74E91200927D78 /* Common */,
 				CE8D07882D74E8E700927D78 /* Modules */,
 				CE8D07872D74E8C400927D78 /* App */,
@@ -287,14 +301,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		CE8D078A2D74E91800927D78 /* Services */ = {
+		CE8D078A2D74E91800927D78 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				CE8D079E2D76305E00927D78 /* APIService.swift */,
-				CEE445402DAEF77E00F33366 /* LotService.swift */,
+				CEB3BAE72DBEC3740044FF6E /* Helpers */,
+				CEB3BAE62DBEC3680044FF6E /* Token */,
+				CEB3BAE52DBEC3600044FF6E /* Core */,
+				CEB3BAE42DBEC3570044FF6E /* API */,
 				CEE445632DB4179800F33366 /* LotStorageService.swift */,
 			);
-			path = Services;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		CE8D078B2D74E93100927D78 /* Auth */ = {
@@ -368,6 +384,7 @@
 				CEE78A662D7C80B20007C8D5 /* HelpersView */,
 				CE8D07A02D7773B000927D78 /* MainViewController.swift */,
 				CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */,
+				CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +404,42 @@
 				CEE78A882D80D4E80007C8D5 /* AuctionItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CEB3BAE42DBEC3570044FF6E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CEE445402DAEF77E00F33366 /* LotService.swift */,
+				CEB3BADC2DBE97B60044FF6E /* AuthService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CEB3BAE52DBEC3600044FF6E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3BAE82DBEC4D40044FF6E /* APIError.swift */,
+				CEB3BAEA2DBEC4E70044FF6E /* NetworkClient.swift */,
+				CEB3BAEC2DBEC5020044FF6E /* Endpoint.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CEB3BAE62DBEC3680044FF6E /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3BAE22DBEAA9B0044FF6E /* TokenManager.swift */,
+				CEB3BAEE2DBEC5680044FF6E /* AuthInterceptor.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		CEB3BAE72DBEC3740044FF6E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D079E2D76305E00927D78 /* KeychainHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CEE445422DAFAFB800F33366 /* CommonViews */ = {
@@ -692,6 +745,7 @@
 				CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */,
 				CEE78A792D7DBE5D0007C8D5 /* NotificationsViewController.swift in Sources */,
 				CE8D07932D74EE1A00927D78 /* UIView.swift in Sources */,
+				CEB3BADD2DBE97B60044FF6E /* AuthService.swift in Sources */,
 				CEE4456A2DB55BCA00F33366 /* NotificationCell.swift in Sources */,
 				CEE4455A2DB40CCE00F33366 /* FavoritesViewController.swift in Sources */,
 				CE3E138E2DB7FC9D00FF4E48 /* LotImageCarouselView.swift in Sources */,
@@ -702,15 +756,19 @@
 				CE87F1052D9088C900E1203F /* StepProgressHeaderView.swift in Sources */,
 				CEE78A7D2D7E13550007C8D5 /* CreateLotViewModel.swift in Sources */,
 				CE87F0F72D8739AD00E1203F /* StepProgressView.swift in Sources */,
+				CEB3BAEF2DBEC5680044FF6E /* AuthInterceptor.swift in Sources */,
+				CEB3BAEB2DBEC4E70044FF6E /* NetworkClient.swift in Sources */,
 				CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */,
 				CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */,
+				CEB3BAE92DBEC4D40044FF6E /* APIError.swift in Sources */,
 				CEE78A892D80D4E80007C8D5 /* AuctionItem.swift in Sources */,
 				CEE445512DB3BE1400F33366 /* DatePickerInputView.swift in Sources */,
 				CE8D07902D74EAB200927D78 /* AuthViewController.swift in Sources */,
 				CEE78A832D7E17670007C8D5 /* SetPriceViewController.swift in Sources */,
 				CEE78A852D7E2E040007C8D5 /* UIColor.swift in Sources */,
-				CE8D079F2D76305E00927D78 /* APIService.swift in Sources */,
+				CE8D079F2D76305E00927D78 /* KeychainHelper.swift in Sources */,
 				CE87F0FF2D8890F600E1203F /* UploadImagesViewController.swift in Sources */,
+				CEB3BAED2DBEC5020044FF6E /* Endpoint.swift in Sources */,
 				CEE445642DB4179800F33366 /* LotStorageService.swift in Sources */,
 				CE3E13902DB7FCC300FF4E48 /* ImageCell.swift in Sources */,
 				CE8D07962D74F6A200927D78 /* CustomTextField.swift in Sources */,
@@ -720,6 +778,8 @@
 				CE8D07812D74E84E00927D78 /* AppDelegate.swift in Sources */,
 				CEE445412DAEF77E00F33366 /* LotService.swift in Sources */,
 				CEE78A722D7DBDB50007C8D5 /* ProfileViewController.swift in Sources */,
+				CEB3BAD92DBE88CE0044FF6E /* CategoryAuctionsViewController.swift in Sources */,
+				CEB3BAE32DBEAA9B0044FF6E /* TokenManager.swift in Sources */,
 				CEE445582DB40CBB00F33366 /* AdressViewController.swift in Sources */,
 				CE3E13922DB7FCFD00FF4E48 /* ThumbnailCell.swift in Sources */,
 				CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */,

@@ -46,13 +46,13 @@ class MainViewController: UIViewController {
     }()
 
     private var auctionItems: [AuctionItem] = [
-        AuctionItem(imageName: "example1", title: "iPhone 13", category: "Электроника", startPrice: 25000, lastBid: 25000, endDate: Date(), description: """
+        AuctionItem(imageName: "example1", title: "iPhone 13", category: .electronics, startPrice: 25000, lastBid: 25000, endDate: Date(), description: """
 lk;asdjfals;kjdf
 askldjf;lsakdjfsd
 als;djf;laskjdf
 a;lskjdf;aslkdfj
 """, sellerName: "jessy pinkman", imageNames: ["example1", "example2", "example3"]),
-        AuctionItem(imageName: "example2", title: "MacBook Air", category: "Ноутбуки", startPrice: 80000, lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: ["mock1", "mock2", "mock3", "mock4"])
+        AuctionItem(imageName: "mock1", title: "MacBook Air", category: .electronics, startPrice: 80000, lastBid: 80000, endDate: Date(), description: "Новый модель MacBook Air", sellerName: "walter white", imageNames: ["mock1", "mock2", "mock3", "mock4"])
     ]
     
     override func viewDidLoad() {
@@ -64,6 +64,11 @@ a;lskjdf;aslkdfj
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(AuctionItemCell.self, forCellWithReuseIdentifier: "AuctionItemCell")
+        
+        categoriesView.onCategorySelected = { [weak self] selectedCategory in
+            let vc = CategoryAuctionsViewController(category: selectedCategory)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func setupUI() {

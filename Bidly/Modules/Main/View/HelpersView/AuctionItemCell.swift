@@ -95,10 +95,14 @@ class AuctionItemCell: UICollectionViewCell {
     }
     
     func configure(with item: AuctionItem, dateFormatter: DateFormatter) {
-        imageView.image = UIImage(named: item.imageName)
+        if let firstImageName = item.imageNames.first {
+            imageView.image = UIImage(named: firstImageName)
+        } else {
+            imageView.image = nil
+        }
         titleLabel.text = item.title
-        categoryLabel.text = item.category
-        bidLabel.text = "\(item.lastBid) ₽"
+        categoryLabel.text = item.category.rawValue
+        bidLabel.text = "\(item.lastBid) KGS"
         dateLabel.text = dateFormatter.string(from: item.endDate)
     }
 }

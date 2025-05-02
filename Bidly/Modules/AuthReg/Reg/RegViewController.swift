@@ -1,91 +1,155 @@
-//
-//  RegViewController.swift
-//  Bidly
-//
-//  Created by Baytik  on 4/3/25.
-//
-
 import UIKit
 
 class RegViewController: UIViewController {
     
+    // MARK: - UI Elements
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     private let titleLabel = UILabel()
-    private let nameTextField = CustomTextField(placeholder: "Name")
-    private let emailTextField = CustomTextField(placeholder: "Email")
-    private let passwordTextField = CustomTextField(placeholder: "Password")
-    private let confirmPasswordTextField = CustomTextField(placeholder: "Confirm Password")
+    private let nameField = CustomTextField(placeholder: "Name")
+    private let emailField = CustomTextField(placeholder: "Email")
+    private let passwordField = CustomTextField(placeholder: "Password")
+    private let confirmPasswordField = CustomTextField(placeholder: "Confirm Password")
     private let registerButton = CustomButton(title: "Register")
+    
+    var isFormValid: Bool {
+        return !(nameField.text?.isEmpty ?? true) &&
+               !(emailField.text?.isEmpty ?? true) &&
+               !(passwordField.text?.isEmpty ?? true) &&
+               !(confirmPasswordField.text?.isEmpty ?? true)
+    }
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupConstraints()
-        setupActions()
-    }
-    private func setupUI() {
         view.backgroundColor = .systemBackground
+        setupUI()
+        setupActions()
+        registerButton.updateState(isEnabled: false)
+        registerForKeyboardNotifications()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Setup UI
+    private func setupUI() {
+        title = "Register"
         
-        titleLabel.text = "Register"
+        titleLabel.text = "Create Account"
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         titleLabel.textAlignment = .center
         
-        passwordTextField.isSecureTextEntry = true
-        confirmPasswordTextField.isSecureTextEntry = true
-        view.addSubviews(titleLabel, nameTextField, emailTextField, passwordTextField, confirmPasswordTextField, registerButton)
-        title = "Register"
-    }
-    private func setupConstraints() {
+        passwordField.isSecureTextEntry = true
+        confirmPasswordField.isSecureTextEntry = true
+        
+        let container = CustomTextFieldContainer(textFields: [
+            (nameField, "Name"),
+            (emailField, "Email"),
+            (passwordField, "Password"),
+            (confirmPasswordField, "Confirm Password")
+        ])
+        
+        // Настройка scrollView и contentView
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubviews(titleLabel, container, registerButton)
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+        container.translatesAutoresizingMaskIntoConstraints = false
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
-            emailTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            nameTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 16),
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            nameTextField.heightAnchor.constraint(equalToConstant: 50),
-
-            passwordTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 16),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
-            confirmPasswordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            confirmPasswordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 50),
-
-            registerButton.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 30),
-            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            registerButton.heightAnchor.constraint(equalToConstant: 50)
-
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            container.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            registerButton.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 30),
+            registerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            registerButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            registerButton.heightAnchor.constraint(equalToConstant: 50),
+            registerButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
+    
+    // MARK: - Keyboard Handling
+    private func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+        // Находим активное текстовое поле
+        var activeField: UITextField?
+        if nameField.isFirstResponder {
+            activeField = nameField
+        } else if emailField.isFirstResponder {
+            activeField = emailField
+        } else if passwordField.isFirstResponder {
+            activeField = passwordField
+        } else if confirmPasswordField.isFirstResponder {
+            activeField = confirmPasswordField
+        }
+        
+        // Прокручиваем к активному полю
+        if let activeField = activeField {
+            let rect = activeField.convert(activeField.bounds, to: scrollView)
+            scrollView.scrollRectToVisible(rect, animated: true)
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
+    }
+    
+    // MARK: - Setup Actions
     private func setupActions() {
+        nameField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        emailField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        passwordField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        confirmPasswordField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
+    
+    @objc private func textFieldsChanged() {
+        registerButton.updateState(isEnabled: isFormValid)
+    }
+    
     @objc private func registerButtonTapped() {
-        guard let name = nameTextField.text,
-              let email = emailTextField.text,
-              let password = passwordTextField.text,
-              let confirmPassword = confirmPasswordTextField.text else { return }
-        if password == confirmPassword {
-            //
-        } else {
-            print("passwords do not match")
+        guard isFormValid else { return }
+        
+        if passwordField.text != confirmPasswordField.text {
+            print("Passwords do not match")
+            return
         }
+        
+        print("Register user: \(nameField.text ?? ""), email: \(emailField.text ?? "")")
     }
 }

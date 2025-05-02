@@ -8,6 +8,14 @@
 import UIKit
 
 class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
+    func submitLot() {
+        //
+    }
+    
+    func fetchTestPosts() {
+        //
+    }
+    
     
     weak var delegate: LotStepDelegate?
     private let viewModel: CreateLotViewModel
@@ -84,47 +92,47 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
         }
     }
     // моковые функции для теста!
-    func fetchTestPosts() {
-        APIService.shared.request(endpoint: "/posts", method: .GET) { (result: Result<[Post], APIError>) in
-            switch result {
-            case .success(let posts):
-                print("✅ Успешно получили посты:")
-                for post in posts.prefix(5) {
-                    print("📝 ID: \(post.id) — \(post.title)")
-                }
-            case .failure(let error):
-                print("❌ Ошибка: \(error)")
-            }
-        }
-    }
-
-    
-    func submitLot() {
-        guard let requestModel = viewModel.toCreateRequest() else {
-            print("❌ Invalid lot data")
-            return
-        }
-
-        guard let jsonData = try? JSONEncoder().encode(requestModel) else {
-            print("❌ Failed to encode lot")
-            return
-        }
-
-        APIService.shared.request(
-            endpoint: "/lots", // Уточни потом у напарника путь
-            method: .POST,
-            body: jsonData
-        ) { (result: Result<ServerResponseModel, APIError>) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let response):
-                    print("✅ Lot created: \(response)")
-                case .failure(let error):
-                    print("❌ Error: \(error)")
-                }
-            }
-        }
-    }
+//    func fetchTestPosts() {
+//        APIService.shared.request(endpoint: "/posts", method: .GET) { (result: Result<[Post], APIError>) in
+//            switch result {
+//            case .success(let posts):
+//                print("✅ Успешно получили посты:")
+//                for post in posts.prefix(5) {
+//                    print("📝 ID: \(post.id) — \(post.title)")
+//                }
+//            case .failure(let error):
+//                print("❌ Ошибка: \(error)")
+//            }
+//        }
+//    }
+//
+//    
+//    func submitLot() {
+//        guard let requestModel = viewModel.toCreateRequest() else {
+//            print("❌ Invalid lot data")
+//            return
+//        }
+//
+//        guard let jsonData = try? JSONEncoder().encode(requestModel) else {
+//            print("❌ Failed to encode lot")
+//            return
+//        }
+//
+//        APIService.shared.request(
+//            endpoint: "/lots", // Уточни потом у напарника путь
+//            method: .POST,
+//            body: jsonData
+//        ) { (result: Result<ServerResponseModel, APIError>) in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let response):
+//                    print("✅ Lot created: \(response)")
+//                case .failure(let error):
+//                    print("❌ Error: \(error)")
+//                }
+//            }
+//        }
+//    }
 
     
     func didTapBackToHome() {

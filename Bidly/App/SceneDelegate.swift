@@ -11,8 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let authViewController = AuthViewController()
 //        let successViewController = SuccessViewController()
         let tabBarController = CustomTabBarController()
-        let mainViewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
+//        let mainViewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: authViewController)
         
 
         window?.rootViewController = tabBarController

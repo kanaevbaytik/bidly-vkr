@@ -10,8 +10,8 @@ import Foundation
 struct AuctionItem {
     let imageName: String
     let title: String
-    let category: String
-    let startPrice: Int     
+    let category: Category
+    let startPrice: Int
     let lastBid: Int
     let endDate: Date
     let description: String

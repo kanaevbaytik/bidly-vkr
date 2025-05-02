@@ -147,7 +147,7 @@ class LotViewController: UIViewController {
     
     private func configureData() {
         titleLabel.text = auctionItem.title
-        categoryLabel.text = auctionItem.category
+        categoryLabel.text = auctionItem.category.rawValue
         bidLabel.text = "Текущая ставка: \(auctionItem.lastBid) сом"
         sellerInfoView.configure(name: auctionItem.sellerName)
         

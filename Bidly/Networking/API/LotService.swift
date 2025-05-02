@@ -20,6 +20,11 @@ class LotService {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
+        // Здесь подставляем токен в Authorization
+        if let accessToken = TokenManager.shared.accessToken {
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        }
+
         let payload: [String: Any] = [
             "title": viewModel.title ?? "",
             "category": viewModel.category ?? "",
@@ -51,4 +56,3 @@ class LotService {
         }.resume()
     }
 }
-

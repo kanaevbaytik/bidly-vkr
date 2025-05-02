@@ -8,17 +8,8 @@
 import UIKit
 
 class CategoriesView: UIView {
-    // Исправлено: теперь кортеж содержит String для имени изображения
-    private let categories: [(imageName: String, title: String)] = [
-        ("electronic", "Электроника"),
-        ("auto", "Авто"),
-        ("forChildren", "Для детей"),
-        ("sport", "Спорт"),
-        ("dom", "Дом"),
-        ("mebel", "Мебель"),
-        ("redkoe", "Редкое"),
-        ("drugoe", "Другое")
-    ]
+    
+    var onCategorySelected: ((Category) -> Void)?
     
     private let topStackView = UIStackView()
     private let bottomStackView = UIStackView()
@@ -45,9 +36,8 @@ class CategoriesView: UIView {
             mainStackView.addArrangedSubview(stack)
         }
         
-        for (index, category) in categories.enumerated() {
-            // Передаем имя изображения (String), а не UIImage
-            let view = createCategoryView(imageName: category.imageName, title: category.title)
+        for (index, category) in Category.allCases.enumerated() {
+            let view = createCategoryView(for: category, at: index)
             if index < 4 {
                 topStackView.addArrangedSubview(view)
             } else {
@@ -64,16 +54,17 @@ class CategoriesView: UIView {
         ])
     }
     
-    // Исправлено: теперь принимаем имя изображения (String)
-    private func createCategoryView(imageName: String, title: String) -> UIView {
+    private func createCategoryView(for category: Category, at index: Int) -> UIView {
         let container = UIView()
+        container.isUserInteractionEnabled = true
         
-        // Контейнер для тени
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(categoryTapped(_:)))
+        container.addGestureRecognizer(tapGesture)
+        container.tag = index
+        
         let shadowContainer = UIView()
         shadowContainer.translatesAutoresizingMaskIntoConstraints = false
         shadowContainer.backgroundColor = .clear
-        
-        // Настройка тени
         shadowContainer.layer.shadowColor = UIColor.black.cgColor
         shadowContainer.layer.shadowOffset = CGSize(width: 0, height: 4)
         shadowContainer.layer.shadowRadius = 6
@@ -81,7 +72,7 @@ class CategoriesView: UIView {
         shadowContainer.layer.cornerRadius = 12
         
         let imageView = UIImageView()
-        imageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
+        imageView.image = UIImage(named: category.imageName)?.withRenderingMode(.alwaysOriginal)
         imageView.contentMode = .scaleAspectFit
         imageView.layer.magnificationFilter = .nearest
         imageView.layer.minificationFilter = .trilinear
@@ -90,11 +81,10 @@ class CategoriesView: UIView {
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Добавляем imageView в контейнер для тени
         shadowContainer.addSubview(imageView)
         
         let label = UILabel()
-        label.text = title
+        label.text = category.rawValue
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -103,19 +93,16 @@ class CategoriesView: UIView {
         container.addSubview(label)
         
         NSLayoutConstraint.activate([
-            // Контейнер для тени
             shadowContainer.widthAnchor.constraint(equalToConstant: 48),
             shadowContainer.heightAnchor.constraint(equalToConstant: 48),
             shadowContainer.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             shadowContainer.topAnchor.constraint(equalTo: container.topAnchor),
             
-            // ImageView внутри контейнера
             imageView.widthAnchor.constraint(equalTo: shadowContainer.widthAnchor),
             imageView.heightAnchor.constraint(equalTo: shadowContainer.heightAnchor),
             imageView.centerXAnchor.constraint(equalTo: shadowContainer.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: shadowContainer.centerYAnchor),
             
-            // Лейбл
             label.topAnchor.constraint(equalTo: shadowContainer.bottomAnchor, constant: 8),
             label.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             label.bottomAnchor.constraint(equalTo: container.bottomAnchor),
@@ -124,5 +111,13 @@ class CategoriesView: UIView {
         ])
         
         return container
+    }
+    
+    @objc private func categoryTapped(_ gesture: UITapGestureRecognizer) {
+        guard let tappedView = gesture.view else { return }
+        let categories = Category.allCases
+        guard categories.indices.contains(tappedView.tag) else { return }
+        let selectedCategory = categories[tappedView.tag]
+        onCategorySelected?(selectedCategory)
     }
 }

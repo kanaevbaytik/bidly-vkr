@@ -26,6 +26,8 @@ class CustomTextField: UITextField {
         layer.cornerRadius = 12
         backgroundColor = .clear
         
+        
+        
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 1))
         leftViewMode = .always
         

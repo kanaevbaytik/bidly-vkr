@@ -16,7 +16,7 @@ class MyLotsViewController: UIViewController, UITableViewDataSource, UITableView
         title = "Мои лоты"
         view.backgroundColor = .systemBackground
 
-        lots = LotStorageService.fetchAll()
+//        lots = LotStorageService.fetchAll()
         setupTableView()
     }
 

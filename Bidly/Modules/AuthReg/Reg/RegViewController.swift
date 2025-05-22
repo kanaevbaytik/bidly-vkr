@@ -144,12 +144,32 @@ class RegViewController: UIViewController {
     
     @objc private func registerButtonTapped() {
         guard isFormValid else { return }
-        
-        if passwordField.text != confirmPasswordField.text {
-            print("Passwords do not match")
+
+        guard passwordField.text == confirmPasswordField.text else {
+            showAlert(title: "Ошибка", message: "Пароли не совпадают")
             return
         }
-        
-        print("Register user: \(nameField.text ?? ""), email: \(emailField.text ?? "")")
+
+        let name = nameField.text ?? ""
+        let email = emailField.text ?? ""
+        let password = passwordField.text ?? ""
+
+        let newUser = RegisterRequest(name: name, email: email, password: password)
+
+        let loader = showLoader()
+
+        Task {
+            do {
+                try await AuthService.shared.register(user: newUser)
+                loader.dismiss(animated: true)
+                showAlert(title: "Регистрация завершена", message: "Теперь войдите в аккаунт") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } catch {
+                loader.dismiss(animated: true)
+                showAlert(title: "Ошибка регистрации", message: error.localizedDescription)
+            }
+        }
     }
 }
+

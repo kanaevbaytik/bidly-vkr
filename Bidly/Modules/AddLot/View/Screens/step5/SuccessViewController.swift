@@ -8,6 +8,10 @@
 import UIKit
 
 class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
+    func didTapPublish() {
+        print("Абдукарим ШЕпский")
+    }
+    
     func submitLot() {
         //
     }
@@ -66,31 +70,31 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
     }
     
     
-    func didTapPublish() {
-        print("🔄 Публикуем лот...")
-
-        if let lotToSave = viewModel.toStorageModel() {
-            LotStorageService.save(lotToSave)
-            print("✅ Лот сохранён локально")
-        }
-
-
-
-        LotService.shared.publishLot(viewModel: viewModel) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    let alert = UIAlertController(title: "Успешно", message: "Лот опубликован!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ок", style: .default))
-                    self?.present(alert, animated: true)
-                case .failure(let error):
-                    let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Понял!", style: .cancel))
-                    self?.present(alert, animated: true)
-                }
-            }
-        }
-    }
+//    func didTapPublish() {
+//        print("🔄 Публикуем лот...")
+//
+//        if let lotToSave = viewModel.toStorageModel() {
+//            LotStorageService.save(lotToSave)
+//            print("✅ Лот сохранён локально")
+//        }
+//
+//
+//
+//        LotService.shared.publishLot(viewModel: viewModel) { [weak self] result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success:
+//                    let alert = UIAlertController(title: "Успешно", message: "Лот опубликован!", preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Ок", style: .default))
+//                    self?.present(alert, animated: true)
+//                case .failure(let error):
+//                    let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Понял!", style: .cancel))
+//                    self?.present(alert, animated: true)
+//                }
+//            }
+//        }
+//    }
     // моковые функции для теста!
 //    func fetchTestPosts() {
 //        APIService.shared.request(endpoint: "/posts", method: .GET) { (result: Result<[Post], APIError>) in

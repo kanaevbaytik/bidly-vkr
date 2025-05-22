@@ -82,8 +82,33 @@ class AuthViewController: UIViewController {
     
     @objc private func loginButtonTapped() {
         guard isFormValid else { return }
-        print("Login with email: \(emailField.text ?? ""), password: \(passwordField.text ?? "")")
+
+        let email = emailField.text ?? ""
+        let password = passwordField.text ?? ""
+        let credentials = UserCredentials(username: email, password: password)
+
+        let loader = showLoader()
+
+        Task {
+            do {
+                try await AuthService.shared.login(user: credentials)
+                loader.dismiss(animated: true)
+                showAlert(title: "Успешно", message: "Вы вошли в систему") {
+                    // Переход на главный экран
+                    let mainTabBar = CustomTabBarController()
+                    mainTabBar.modalPresentationStyle = .fullScreen
+                    self.present(mainTabBar, animated: true)
+                }
+            } catch {
+                loader.dismiss(animated: true)
+                showAlert(title: "Ошибка входа", message: error.localizedDescription)
+            }
+        }
     }
+
+
+
+
     
     @objc private func signUpButtonTapped() {
         let registerVC = RegViewController()

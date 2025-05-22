@@ -10,6 +10,5 @@ import Foundation
 class AuthViewModel {
     func login (email: String, password: String, completion: @escaping (Bool) -> Void) {
         //вызов апи для авторизации
-        
     }
 }

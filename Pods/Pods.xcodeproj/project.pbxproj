@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,14 +14,15 @@
 
 /* Begin PBXFileReference section */
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7B63A3A557ED4BDF73D58D6FC026F63F /* Pods-Bidly */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Bidly"; path = Pods_Bidly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B63A3A557ED4BDF73D58D6FC026F63F /* Pods_Bidly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bidly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8152749AF6098B07F1660D4EC05F4F4B /* Pods-Bidly.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Bidly.modulemap"; sourceTree = "<group>"; };
 		8265693A3C3C5A09809B05D55823C8CA /* Pods-Bidly-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bidly-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8F1037ABE33FAE7AB923407D4EBB67A1 /* Pods-Bidly-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bidly-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ADCAB815D4E73471D688CB7B331E43A0 /* Pods-Bidly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bidly.debug.xcconfig"; sourceTree = "<group>"; };
 		C69D894730C55052319624DAA149471A /* Pods-Bidly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bidly.release.xcconfig"; sourceTree = "<group>"; };
 		CCE799AA66532B662F4F777171D6A750 /* Pods-Bidly-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bidly-dummy.m"; sourceTree = "<group>"; };
+		CEA4F5102DEA38A500FBCB15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4F7A086F03A7A7C43952A67BDEC165A /* Pods-Bidly-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bidly-umbrella.h"; sourceTree = "<group>"; };
 		E77DC966E0AD91AFCECA663BB7280F69 /* Pods-Bidly-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bidly-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +42,7 @@
 		527A7CCA1EAFDA640588BD3E71D266F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B63A3A557ED4BDF73D58D6FC026F63F /* Pods-Bidly */,
+				7B63A3A557ED4BDF73D58D6FC026F63F /* Pods_Bidly.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +74,7 @@
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
+				CEA4F5102DEA38A500FBCB15 /* GoogleService-Info.plist */,
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				527A7CCA1EAFDA640588BD3E71D266F7 /* Products */,
@@ -125,7 +127,7 @@
 			);
 			name = "Pods-Bidly";
 			productName = Pods_Bidly;
-			productReference = 7B63A3A557ED4BDF73D58D6FC026F63F /* Pods-Bidly */;
+			productReference = 7B63A3A557ED4BDF73D58D6FC026F63F /* Pods_Bidly.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -146,8 +148,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 527A7CCA1EAFDA640588BD3E71D266F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

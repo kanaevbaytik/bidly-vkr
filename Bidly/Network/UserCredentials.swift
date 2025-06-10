@@ -12,7 +12,7 @@ struct UserCredentials: Codable {
     let password: String
 }
 
-struct RegisterRequest {
+struct RegisterRequest: Encodable {
     let name: String
     let email: String
     let password: String

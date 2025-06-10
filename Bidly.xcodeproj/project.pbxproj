@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2E7BA22DEA3917001E248A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA4F50F2DEA384A00FBCB15 /* GoogleService-Info.plist */; };
 		CE3931AA2DDDD9B800B63E13 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3931A92DDDD9B800B63E13 /* AuthResponse.swift */; };
 		CE3931AC2DDDD9EA00B63E13 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3931AB2DDDD9EA00B63E13 /* UserCredentials.swift */; };
 		CE3931AE2DDDDA0000B63E13 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3931AD2DDDDA0000B63E13 /* AuthError.swift */; };
@@ -40,11 +41,12 @@
 		CE8D07A12D7773B000927D78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A02D7773B000927D78 /* MainViewController.swift */; };
 		CE8D07AA2D77832900927D78 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07A92D77832900927D78 /* Category.swift */; };
 		CE8D07AC2D77833500927D78 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D07AB2D77833500927D78 /* Product.swift */; };
+		CEA4F50A2DE9A11900FBCB15 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4F5092DE9A11900FBCB15 /* String.swift */; };
+		CEA4F50C2DE9FBC800FBCB15 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4F50B2DE9FBC800FBCB15 /* UIViewController.swift */; };
 		CEB3BAD92DBE88CE0044FF6E /* CategoryAuctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */; };
 		CEB3BB302DDA94E70044FF6E /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BB2F2DDA94E70044FF6E /* KeychainManager.swift */; };
 		CEB3BB322DDA94FC0044FF6E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BB312DDA94FC0044FF6E /* AuthService.swift */; };
 		CEB3BB342DDA950F0044FF6E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BB332DDA950F0044FF6E /* APIManager.swift */; };
-		CEB3BB362DDB7E7C0044FF6E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3BB352DDB7E7C0044FF6E /* UIViewController.swift */; };
 		CEE445442DAFAFD100F33366 /* SellerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445432DAFAFD100F33366 /* SellerInfoView.swift */; };
 		CEE445462DB18CC300F33366 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445452DB18CC300F33366 /* Date.swift */; };
 		CEE445512DB3BE1400F33366 /* DatePickerInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445502DB3BE1400F33366 /* DatePickerInputView.swift */; };
@@ -58,7 +60,6 @@
 		CEE445672DB55B5A00F33366 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445662DB55B5A00F33366 /* NotificationModel.swift */; };
 		CEE4456A2DB55BCA00F33366 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE445692DB55BCA00F33366 /* NotificationCell.swift */; };
 		CEE4456C2DB5605C00F33366 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4456B2DB5605C00F33366 /* NotificationItem.swift */; };
-		CEE4456E2DB5750A00F33366 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE4456D2DB5750A00F33366 /* GoogleService-Info.plist */; };
 		CEE445732DB7CC8700F33366 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEE445722DB7CC8700F33366 /* FirebaseAnalytics */; };
 		CEE445752DB7CC8700F33366 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CEE445742DB7CC8700F33366 /* FirebaseAnalyticsOnDeviceConversion */; };
 		CEE445772DB7CC8700F33366 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = CEE445762DB7CC8700F33366 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -117,11 +118,13 @@
 		CE8D07A02D7773B000927D78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE8D07A92D77832900927D78 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CE8D07AB2D77833500927D78 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CEA4F5092DE9A11900FBCB15 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		CEA4F50B2DE9FBC800FBCB15 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		CEA4F50F2DEA384A00FBCB15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAuctionsViewController.swift; sourceTree = "<group>"; };
 		CEB3BB2F2DDA94E70044FF6E /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CEB3BB312DDA94FC0044FF6E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CEB3BB332DDA950F0044FF6E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		CEB3BB352DDB7E7C0044FF6E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CEE445432DAFAFD100F33366 /* SellerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInfoView.swift; sourceTree = "<group>"; };
 		CEE445452DB18CC300F33366 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CEE445502DB3BE1400F33366 /* DatePickerInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInputView.swift; sourceTree = "<group>"; };
@@ -135,7 +138,6 @@
 		CEE445662DB55B5A00F33366 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		CEE445692DB55BCA00F33366 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		CEE4456B2DB5605C00F33366 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
-		CEE4456D2DB5750A00F33366 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVIew.swift; sourceTree = "<group>"; };
 		CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -239,8 +241,8 @@
 				CE8D07802D74E84E00927D78 /* Bidly */,
 				CE8D07622D74E81300927D78 /* Products */,
 				4042A25AB2E733F691132308 /* Pods */,
-				CEE4456D2DB5750A00F33366 /* GoogleService-Info.plist */,
 				775049E39CF9B9613F030CC2 /* Frameworks */,
+				CEA4F50F2DEA384A00FBCB15 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,7 +344,7 @@
 				CE8D07922D74EE1A00927D78 /* UIView.swift */,
 				CEE78A842D7E2E040007C8D5 /* UIColor.swift */,
 				CEE445452DB18CC300F33366 /* Date.swift */,
-				CEB3BB352DDB7E7C0044FF6E /* UIViewController.swift */,
+				CEA4F5092DE9A11900FBCB15 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +355,7 @@
 				CE8D07952D74F6A200927D78 /* CustomTextField.swift */,
 				CE8D07972D74F6BF00927D78 /* CustomButton.swift */,
 				CE87F1022D8B5B7300E1203F /* CustomTextFieldContainer.swift */,
+				CEA4F50B2DE9FBC800FBCB15 /* UIViewController.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -666,9 +669,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2E7BA22DEA3917001E248A /* GoogleService-Info.plist in Resources */,
 				CE8D07842D74E84E00927D78 /* Assets.xcassets in Resources */,
 				CE8D07862D74E84E00927D78 /* LaunchScreen.storyboard in Resources */,
-				CEE4456E2DB5750A00F33366 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,10 +707,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB3BB362DDB7E7C0044FF6E /* UIViewController.swift in Sources */,
 				CE87F1012D88910800E1203F /* DescriptionViewController.swift in Sources */,
 				CEE78A872D80D1150007C8D5 /* AuctionItemCell.swift in Sources */,
 				CE87F0FD2D8890B600E1203F /* CreateLotPageViewController.swift in Sources */,
+				CEA4F50A2DE9A11900FBCB15 /* String.swift in Sources */,
 				CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */,
 				CEE78A792D7DBE5D0007C8D5 /* NotificationsViewController.swift in Sources */,
 				CE8D07932D74EE1A00927D78 /* UIView.swift in Sources */,
@@ -759,6 +762,7 @@
 				CEE445462DB18CC300F33366 /* Date.swift in Sources */,
 				CE3931AE2DDDDA0000B63E13 /* AuthError.swift in Sources */,
 				CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */,
+				CEA4F50C2DE9FBC800FBCB15 /* UIViewController.swift in Sources */,
 				CE3E13942DB96B4300FF4E48 /* BidDialogViewController.swift in Sources */,
 				CE8D07AC2D77833500927D78 /* Product.swift in Sources */,
 				CEE445532DB3BE3000F33366 /* DropdownHandler.swift in Sources */,

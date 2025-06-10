@@ -34,5 +34,33 @@ class CustomButton: UIButton {
             self.backgroundColor = isEnabled ? UIColor(hex: "#56549EFF") : UIColor.systemGray4
         }
     }
+    
+    private var originalTitle: String?
+    private var activityIndicator: UIActivityIndicatorView?
+    
+    func showLoading(_ isLoading: Bool) {
+        if isLoading {
+            originalTitle = title(for: .normal)
+            setTitle("", for: .normal)
+            
+            if activityIndicator == nil {
+                let indicator = UIActivityIndicatorView(style: .medium)
+                indicator.translatesAutoresizingMaskIntoConstraints = false
+                addSubview(indicator)
+                NSLayoutConstraint.activate([
+                    indicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+                    indicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+                ])
+                activityIndicator = indicator
+            }
+            
+            activityIndicator?.startAnimating()
+            isEnabled = false
+        } else {
+            setTitle(originalTitle, for: .normal)
+            activityIndicator?.stopAnimating()
+            isEnabled = true
+        }
+    }
 }
 

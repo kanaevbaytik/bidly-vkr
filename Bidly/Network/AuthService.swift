@@ -8,7 +8,7 @@ import Foundation
 
 final class AuthService {
     static let shared = AuthService()
-    private let baseURL = "https://your-keycloak-server.com/auth/realms/your-realm/protocol/openid-connect"
+    private let baseURL = "http://172.20.10.3:8022"
     private let storage: TokenStorage
 
     init(storage: TokenStorage = KeychainManager.shared) {
@@ -16,30 +16,38 @@ final class AuthService {
     }
 
     // MARK: - Регистрация
-    func register(user: UserCredentials) async throws -> Bool {
+    func register(user: RegisterRequest) async throws -> AuthResponse {
         let url = URL(string: "\(baseURL)/registrations")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONEncoder().encode(user)
         
-        let (_, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
         
-        guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+        guard let httpResponse = response as? HTTPURLResponse,
+              200..<300 ~= httpResponse.statusCode else {
             throw AuthError.registrationFailed
         }
         
-        return true
+        // Парсим и сохраняем токены, как при login
+        guard let authResponse = try? JSONDecoder().decode(AuthResponse.self, from: data) else {
+            throw AuthError.invalidCredentials
+        }
+
+        saveTokens(from: authResponse)
+        return authResponse
     }
+
 
     // MARK: - Авторизация
     func login(user: UserCredentials) async throws -> AuthResponse {
-        let url = URL(string: "\(baseURL)/token")!
+        let url = URL(string: "\(baseURL)/auth/loginWith")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
-        let body = "client_id=ios-app&username=\(user.username)&password=\(user.password)&grant_type=password"
+        let body = "username=\(user.username)&password=\(user.password)"
         request.httpBody = body.data(using: .utf8)
         
         let (data, _) = try await URLSession.shared.data(for: request)

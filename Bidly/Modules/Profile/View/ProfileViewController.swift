@@ -45,12 +45,17 @@ class ProfileViewController: UIViewController {
         return container
     }()
 
-    private let items: [(title: String, icon: String, iconColor: UIColor)] = [
-        ("Мои лоты", "cube.box.fill", .systemBlue),
-        ("Адрес", "map.fill", .systemGreen),
-        ("Избранные лоты", "heart.fill", .systemPink),
-        ("Настройки", "gearshape.fill", .systemGray),
-        ("Поддержка", "questionmark.circle.fill", .systemOrange)
+    private let sections: [[(title: String, icon: String, iconColor: UIColor)]] = [
+        [
+            ("Мои лоты", "cube.box.fill", .systemBlue),
+            ("Адрес", "map.fill", .systemGreen),
+            ("Избранные лоты", "heart.fill", .systemPink),
+            ("Настройки", "gearshape.fill", .systemGray),
+            ("Поддержка", "questionmark.circle.fill", .systemOrange)
+        ],
+        [
+            ("Выйти из аккаунта", "arrow.backward.square.fill", .systemRed)
+        ]
     ]
 
     override func viewDidLoad() {
@@ -77,48 +82,75 @@ class ProfileViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+
+    private func handleLogout() {
+        let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { _ in
+            AuthService.shared.logout()
+
+            // Переход к экрану авторизации
+            let loginVC = AuthViewController()
+            let nav = UINavigationController(rootViewController: loginVC)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+        }))
+        present(alert, animated: true)
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return sections[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.row]
+        let item = sections[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         var config = cell.defaultContentConfiguration()
         config.text = item.title
         config.image = UIImage(systemName: item.icon)
         config.imageProperties.tintColor = item.iconColor
+        config.textProperties.color = item.iconColor == .systemRed ? .systemRed : .label
         cell.contentConfiguration = config
 
-        cell.accessoryType = .disclosureIndicator
+        cell.accessoryType = item.title == "Выйти из аккаунта" ? .none : .disclosureIndicator
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
+        let item = sections[indexPath.section][indexPath.row]
+
+        if item.title == "Выйти из аккаунта" {
+            handleLogout()
+            return
+        }
+
         let vc: UIViewController
 
-        switch indexPath.row {
-        case 0:
+        switch item.title {
+        case "Мои лоты":
             vc = MyLotsViewController()
-        case 1:
+        case "Адрес":
             vc = AdressViewController()
-        case 2:
+        case "Избранные лоты":
             vc = FavoritesViewController()
-        case 3:
+        case "Настройки":
             vc = SettingsViewController()
-        case 4:
+        case "Поддержка":
             vc = SupportViewController()
         default:
             return
         }
-        
+
         navigationController?.pushViewController(vc, animated: true)
     }
 }

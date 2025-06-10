@@ -2,9 +2,10 @@
 //  UIViewController.swift
 //  Bidly
 //
-//  Created by Baytik  on 19/5/25.
+//  Created by Baytik  on 30/5/25.
 //
 
+import Foundation
 import UIKit
 
 extension UIViewController {

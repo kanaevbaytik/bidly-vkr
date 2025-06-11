@@ -102,6 +102,6 @@ class SuccessContainerView: UIView {
     
     @objc private func publishTapped() {
         print("Кнопка нажата - didTapPublish")
-        delegate?.fetchTestPosts()
+        delegate?.didTapPublish()
     }
 }

@@ -8,7 +8,7 @@ import Foundation
 
 final class AuthService {
     static let shared = AuthService()
-    private let baseURL = "http://172.20.10.3:8022"
+    private let baseURL = "http://172.20.10.3:8050/account"
     private let storage: TokenStorage
 
     init(storage: TokenStorage = KeychainManager.shared) {

@@ -17,7 +17,7 @@ final class CreateLotViewModel {
     var minBidStep: Double?
     var endDate: Date?
     var images: [UIImage] = []
-    var lotDescription: String?
+    var description: String?
     
     // MARK: - Computed Properties
     var isReadyToSubmit: Bool {
@@ -27,7 +27,7 @@ final class CreateLotViewModel {
         minBidStep != nil &&
         endDate != nil &&
         !images.isEmpty &&
-        lotDescription != nil
+        description != nil
     }
     
     // MARK: - Step 1: Set basic details
@@ -81,7 +81,7 @@ final class CreateLotViewModel {
         guard let desc = description?.trimmingCharacters(in: .whitespacesAndNewlines), !desc.isEmpty else {
             return false
         }
-        self.lotDescription = desc
+        self.description = desc
         print("📝 Описание: \(desc)")
         return true
     }
@@ -107,7 +107,7 @@ extension CreateLotViewModel {
             let startPrice = startPrice,
             let minBidStep = minBidStep,
             let endDate = endDate,
-            let lotDescription = lotDescription
+            let lotDescription = description
         else { return nil }
         
         let imageData = images.compactMap { $0.jpegData(compressionQuality: 0.7) }
@@ -136,7 +136,7 @@ extension CreateLotViewModel {
             let startPrice = startPrice,
             let minBidStep = minBidStep,
             let endDate = endDate,
-            let lotDescription = lotDescription
+            let lotDescription = description
         else { return nil }
 
         let formatter = DateFormatter()

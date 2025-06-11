@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0BFCEA2DF88FFD0024BB62 /* LotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BFCE92DF88FFD0024BB62 /* LotService.swift */; };
+		CE0BFCEC2DF8C7750024BB62 /* AuctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BFCEB2DF8C7750024BB62 /* AuctionModel.swift */; };
+		CE0BFCEE2DF8C7A70024BB62 /* AuctionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BFCED2DF8C7A70024BB62 /* AuctionAPI.swift */; };
+		CE0BFCF02DFA07B00024BB62 /* TestUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BFCEF2DFA07B00024BB62 /* TestUploadService.swift */; };
 		CE2E7BA22DEA3917001E248A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA4F50F2DEA384A00FBCB15 /* GoogleService-Info.plist */; };
 		CE3931AA2DDDD9B800B63E13 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3931A92DDDD9B800B63E13 /* AuthResponse.swift */; };
 		CE3931AC2DDDD9EA00B63E13 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3931AB2DDDD9EA00B63E13 /* UserCredentials.swift */; };
@@ -83,6 +87,10 @@
 /* Begin PBXFileReference section */
 		4FF7FFEBCBC3B96202F859BC /* Pods-Bidly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bidly.debug.xcconfig"; path = "Target Support Files/Pods-Bidly/Pods-Bidly.debug.xcconfig"; sourceTree = "<group>"; };
 		88005E98CE6558274D00A835 /* Pods_Bidly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bidly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0BFCE92DF88FFD0024BB62 /* LotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotService.swift; sourceTree = "<group>"; };
+		CE0BFCEB2DF8C7750024BB62 /* AuctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionModel.swift; sourceTree = "<group>"; };
+		CE0BFCED2DF8C7A70024BB62 /* AuctionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionAPI.swift; sourceTree = "<group>"; };
+		CE0BFCEF2DFA07B00024BB62 /* TestUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUploadService.swift; sourceTree = "<group>"; };
 		CE3931A92DDDD9B800B63E13 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		CE3931AB2DDDD9EA00B63E13 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		CE3931AD2DDDDA0000B63E13 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 				CEE445422DAFAFB800F33366 /* CommonViews */,
 				CE87F0F12D84A2E400E1203F /* LotViewController.swift */,
 				CE3E13932DB96B4300FF4E48 /* BidDialogViewController.swift */,
+				CE0BFCEB2DF8C7750024BB62 /* AuctionModel.swift */,
 			);
 			path = AuctionItem;
 			sourceTree = "<group>";
@@ -406,6 +415,9 @@
 				CE3931AB2DDDD9EA00B63E13 /* UserCredentials.swift */,
 				CE3931AD2DDDDA0000B63E13 /* AuthError.swift */,
 				CE3931AF2DDDDA1C00B63E13 /* TokenStorage.swift */,
+				CE0BFCE92DF88FFD0024BB62 /* LotService.swift */,
+				CE0BFCED2DF8C7A70024BB62 /* AuctionAPI.swift */,
+				CE0BFCEF2DFA07B00024BB62 /* TestUploadService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -709,6 +721,7 @@
 			files = (
 				CE87F1012D88910800E1203F /* DescriptionViewController.swift in Sources */,
 				CEE78A872D80D1150007C8D5 /* AuctionItemCell.swift in Sources */,
+				CE0BFCEE2DF8C7A70024BB62 /* AuctionAPI.swift in Sources */,
 				CE87F0FD2D8890B600E1203F /* CreateLotPageViewController.swift in Sources */,
 				CEA4F50A2DE9A11900FBCB15 /* String.swift in Sources */,
 				CE87F0F22D84A2E400E1203F /* LotViewController.swift in Sources */,
@@ -721,6 +734,7 @@
 				CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */,
 				CE3E13962DBB8A7600FF4E48 /* AuctionBannerView.swift in Sources */,
 				CE87F1082D91BA5600E1203F /* UploadedPhotosContainer.swift in Sources */,
+				CE0BFCEA2DF88FFD0024BB62 /* LotService.swift in Sources */,
 				CE87F1052D9088C900E1203F /* StepProgressHeaderView.swift in Sources */,
 				CEE78A7D2D7E13550007C8D5 /* CreateLotViewModel.swift in Sources */,
 				CE87F0F72D8739AD00E1203F /* StepProgressView.swift in Sources */,
@@ -755,6 +769,8 @@
 				CE87F1032D8B5B7300E1203F /* CustomTextFieldContainer.swift in Sources */,
 				CEE4455C2DB40CDF00F33366 /* SettingsViewController.swift in Sources */,
 				CEE445602DB4172000F33366 /* Model.swift in Sources */,
+				CE0BFCF02DFA07B00024BB62 /* TestUploadService.swift in Sources */,
+				CE0BFCEC2DF8C7750024BB62 /* AuctionModel.swift in Sources */,
 				CE8D07AA2D77832900927D78 /* Category.swift in Sources */,
 				CEE78A6F2D7DBD940007C8D5 /* MyBidsViewController.swift in Sources */,
 				CE8D079D2D762F9B00927D78 /* AuthViewModel.swift in Sources */,

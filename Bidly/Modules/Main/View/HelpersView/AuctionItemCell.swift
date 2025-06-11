@@ -94,16 +94,32 @@ class AuctionItemCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+//    func configure(with item: AuctionItem, dateFormatter: DateFormatter) {
+//        if let firstImageName = item.imageNames.first {
+//            imageView.image = UIImage(named: firstImageName)
+//        } else {
+//            imageView.image = nil
+//        }
+//        titleLabel.text = item.title
+//        categoryLabel.text = item.category.rawValue
+//        bidLabel.text = "\(item.lastBid) KGS"
+//        dateLabel.text = dateFormatter.string(from: item.endDate)
+//    }
     func configure(with item: AuctionItem, dateFormatter: DateFormatter) {
-        if let firstImageName = item.imageNames.first {
-            imageView.image = UIImage(named: firstImageName)
-        } else {
-            imageView.image = nil
-        }
         titleLabel.text = item.title
-        categoryLabel.text = item.category.rawValue
-        bidLabel.text = "\(item.lastBid) KGS"
-        dateLabel.text = dateFormatter.string(from: item.endDate)
+        bidLabel.text = "KGS \(Int(item.lastBid))"
+        dateLabel.text = "до \(dateFormatter.string(from: item.endDate))"
+
+        if let url = URL(string: item.imageName) {
+            // Можно использовать SDWebImage, Kingfisher или простую загрузку
+            URLSession.shared.dataTask(with: url) { data, _, _ in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        self.imageView.image = UIImage(data: data)
+                    }
+                }
+            }.resume()
+        }
     }
 }
 

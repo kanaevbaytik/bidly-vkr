@@ -69,6 +69,10 @@ a;lskjdf;aslkdfj
             let vc = CategoryAuctionsViewController(category: selectedCategory)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
+        Task {
+            await fetchPopularLots()
+        }
+    
     }
     
     private func setupUI() {
@@ -157,6 +161,30 @@ extension MainViewController: UICollectionViewDelegate {
         let item = auctionItems[indexPath.item]
         let vc = LotViewController(auctionItem: item)
         navigationController?.pushViewController(vc, animated: true)
+    }
+    @MainActor
+    private func fetchPopularLots() async {
+        do {
+            let responses = try await AuctionAPI.shared.fetchPopularLots()
+            // Внутри AuctionAPI.fetchPopularLots()
+
+            self.auctionItems = responses.map { response in
+                AuctionItem(
+                    imageName: response.itemImages.first?.imageUrl ?? "",
+                    title: response.title,
+                    category: .electronics, // пока category = null
+                    startPrice: Int(response.startingPrice),
+                    lastBid: Int(response.currentPrice),
+                    endDate:  response.endTime,
+                    description: response.description,
+                    sellerName: "Продавец", // пока нет имени
+                    imageNames: response.itemImages.map { $0.imageUrl }
+                )
+            }
+            collectionView.reloadData()
+        } catch {
+            print("❌ Ошибка загрузки лотов: \(error)")
+        }
     }
 }
 

@@ -37,8 +37,15 @@ final class ThumbnailCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with image: UIImage?, isSelected: Bool) {
-        imageView.image = image
-        self.isSelected = isSelected
+//    func configure(with image: UIImage?, isSelected: Bool) {
+//        imageView.image = image
+//        self.isSelected = isSelected
+//    }
+    func configure(withUrl urlString: String, isSelected: Bool) {
+        guard let url = URL(string: urlString) else { return }
+        imageView.kf.setImage(with: url)
+        layer.borderWidth = isSelected ? 2 : 0
+        layer.borderColor = isSelected ? UIColor.purple.cgColor : nil
     }
+
 }

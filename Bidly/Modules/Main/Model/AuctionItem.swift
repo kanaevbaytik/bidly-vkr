@@ -16,5 +16,5 @@ struct AuctionItem {
     let endDate: Date
     let description: String
     let sellerName: String
-    let imageNames: [String]
+    let itemImages: [ItemImageResponse]
 }

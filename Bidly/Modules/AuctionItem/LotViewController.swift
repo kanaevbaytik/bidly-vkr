@@ -9,6 +9,7 @@ import UIKit
 
 class LotViewController: UIViewController {
     
+//    private let auctionItem: AuctionItem
     private let auctionItem: AuctionItem
     
     private let topBarView: UIView = {
@@ -158,7 +159,9 @@ class LotViewController: UIViewController {
         descriptionLabel.text = "Описание: \(auctionItem.description)"
         
         // Устанавливаем изображения для карусели
-        imageCarouselView.imageUrls = auctionItem.imageNames
+//        imageCarouselView.imageUrls = auctionItem.imageNames
+        imageCarouselView.imageUrls = auctionItem.itemImages.map { $0.imageUrl }
+
     }
     
     @objc private func shareTapped() {

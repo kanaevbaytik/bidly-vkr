@@ -94,19 +94,33 @@ extension LotImageCarouselView: UICollectionViewDataSource, UICollectionViewDele
         return imageUrls.count
     }
     
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let image = UIImage(named: imageUrls[indexPath.item])
+//        
+//        if collectionView == mainCarousel {
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCell else { return UICollectionViewCell() }
+//            cell.configure(with: image)
+//            return cell
+//        } else {
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath) as? ThumbnailCell else { return UICollectionViewCell() }
+//            cell.configure(with: image, isSelected: indexPath.item == currentIndex)
+//            return cell
+//        }
+//    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let image = UIImage(named: imageUrls[indexPath.item])
-        
+        let imageUrl = imageUrls[indexPath.item]
+
         if collectionView == mainCarousel {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCell else { return UICollectionViewCell() }
-            cell.configure(with: image)
+            cell.configure(withUrl: imageUrl) // ⬅️ изменено
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath) as? ThumbnailCell else { return UICollectionViewCell() }
-            cell.configure(with: image, isSelected: indexPath.item == currentIndex)
+            cell.configure(withUrl: imageUrl, isSelected: indexPath.item == currentIndex) // ⬅️ изменено
             return cell
         }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == thumbnailCarousel {

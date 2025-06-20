@@ -28,7 +28,7 @@ class CategoryAuctionsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupTableView()
-        loadItems()
+//        loadItems()
     }
 
     private func setupTableView() {
@@ -38,15 +38,15 @@ class CategoryAuctionsViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    private func loadItems() {
-        // Пока фейковые аукционы
-        items = [
-            AuctionItem(imageName: "electronic", title: "iPhone 15 Pro", category: .electronics, startPrice: 1000, lastBid: 1200, endDate: Date(), description: "Топовый телефон", sellerName: "Иван", imageNames: ["electronic"]),
-            AuctionItem(imageName: "electronic", title: "MacBook Air", category: .electronics, startPrice: 1500, lastBid: 1800, endDate: Date(), description: "Лёгкий и мощный ноутбук", sellerName: "Мария", imageNames: ["electronic"])
-        ].filter { $0.category == category }
-        
-        tableView.reloadData()
-    }
+//    private func loadItems() {
+//        // Пока фейковые аукционы
+//        items = [
+//            AuctionItem(imageName: "electronic", title: "iPhone 15 Pro", category: .electronics, startPrice: 1000, lastBid: 1200, endDate: Date(), description: "Топовый телефон", sellerName: "Иван", imageNames: ["electronic"]),
+//            AuctionItem(imageName: "electronic", title: "MacBook Air", category: .electronics, startPrice: 1500, lastBid: 1800, endDate: Date(), description: "Лёгкий и мощный ноутбук", sellerName: "Мария", imageNames: ["electronic"])
+//        ].filter { $0.category == category }
+//        
+//        tableView.reloadData()
+//    }
 }
 
 extension CategoryAuctionsViewController: UITableViewDataSource {

@@ -63,3 +63,6 @@ struct ItemImageResponse: Decodable {
     let imageUrl: String
 }
 
+struct AuctionItemImage: Codable {
+    let imageUrl: String
+}

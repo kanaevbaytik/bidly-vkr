@@ -19,7 +19,7 @@ final class AuctionAPI {
     private init() {}
 
     func fetchPopularLots() async throws -> [AuctionItemResponse] {
-        guard let url = URL(string: "http://172.20.10.3:8050/auction/items") else {
+        guard let url = URL(string: "\(API.baseURL)/auction/items") else {
             throw APIError.invalidURL
         }
 
@@ -42,7 +42,7 @@ final class AuctionAPI {
 //             decoder.dateDecodingStrategy = .iso8601
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        formatter.timeZone = TimeZone(secondsFromGMT: -6 * 3600)
+        formatter.timeZone = TimeZone(secondsFromGMT: +6 * 3600)
         decoder.dateDecodingStrategy = .formatted(formatter)
 
             return try decoder.decode([AuctionItemResponse].self, from: data)

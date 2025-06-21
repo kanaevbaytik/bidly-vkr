@@ -8,7 +8,7 @@ import Foundation
 
 final class AuthService {
     static let shared = AuthService()
-    private let baseURL = "http://172.20.10.3:8050/account"
+    private var baseURL = API.baseURL
     private let storage: TokenStorage
 
     init(storage: TokenStorage = KeychainManager.shared) {
@@ -42,7 +42,11 @@ final class AuthService {
 
     // MARK: - Авторизация
     func login(user: UserCredentials) async throws -> AuthResponse {
-        let url = URL(string: "\(baseURL)/auth/loginWith")!
+        print("base url = ", baseURL)
+        guard let url = URL(string: "\(baseURL)/account/auth/loginWith") else {
+            throw AuthError.invalidURL
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

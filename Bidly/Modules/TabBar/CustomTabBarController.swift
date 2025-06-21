@@ -11,7 +11,7 @@ class CustomTabBarController: UITabBarController {
         let viewModel = CreateLotViewModel()
         
         let mainVC = UINavigationController(rootViewController: MainViewController())
-        let myBidsVC = UINavigationController(rootViewController: MyBidsViewController())
+        let myBidsVC = UINavigationController(rootViewController: ChatListViewController())
         let addLotVC = UINavigationController(rootViewController: EnterLotDetailsViewController(viewModel: viewModel))
         let notificationsVC = UINavigationController(rootViewController: NotificationsViewController())
         let profileVC = UINavigationController(rootViewController: ProfileViewController())

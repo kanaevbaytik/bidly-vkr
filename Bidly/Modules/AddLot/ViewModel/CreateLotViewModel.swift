@@ -155,20 +155,20 @@ extension CreateLotViewModel {
             minBidStep: minBidStep,
             endDate: endDateString,
             description: lotDescription,
-            imagesBase64: imagesBase64
+            images: images
         )
     }
 }
 
 //MARK: - Моковые структуры для теста сетевого слоя!
-struct CreateLotRequest: Codable {
+struct CreateLotRequest {
     let title: String
     let category: String
     let startPrice: Double
     let minBidStep: Double
     let endDate: String
     let description: String
-    let imagesBase64: [String]
+    let images: [UIImage]
 }
 
 struct ServerResponseModel: Codable {

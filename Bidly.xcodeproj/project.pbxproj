@@ -79,7 +79,7 @@
 		CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */; };
 		CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */; };
 		CEE78A6B2D7DB9820007C8D5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */; };
-		CEE78A6F2D7DBD940007C8D5 /* MyBidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6E2D7DBD930007C8D5 /* MyBidsViewController.swift */; };
+		CEE78A6F2D7DBD940007C8D5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A6E2D7DBD930007C8D5 /* ChatViewController.swift */; };
 		CEE78A722D7DBDB50007C8D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A712D7DBDB50007C8D5 /* ProfileViewController.swift */; };
 		CEE78A752D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */; };
 		CEE78A792D7DBE5D0007C8D5 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A782D7DBE5D0007C8D5 /* NotificationsViewController.swift */; };
@@ -90,6 +90,11 @@
 		CEE78A892D80D4E80007C8D5 /* AuctionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE78A882D80D4E80007C8D5 /* AuctionItem.swift */; };
 		CEEC44CF2E03128D00711AF1 /* Pods_Bidly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC1529810C4F5EB876A07D6 /* Pods_Bidly.framework */; };
 		CEEC44D02E03128D00711AF1 /* Pods_Bidly.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBC1529810C4F5EB876A07D6 /* Pods_Bidly.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEEC44D42E06CB1700711AF1 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44D32E06CB1700711AF1 /* ChatMessageCell.swift */; };
+		CEEC44D62E06CD3700711AF1 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44D52E06CD3700711AF1 /* ChatListViewController.swift */; };
+		CEEC44D82E06ED4100711AF1 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44D72E06ED4100711AF1 /* ChatListCell.swift */; };
+		CEEC44DA2E06F0AC00711AF1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44D92E06F0AC00711AF1 /* API.swift */; };
+		CEEC44DC2E06F8C600711AF1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44DB2E06F8C600711AF1 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -174,7 +179,7 @@
 		CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVIew.swift; sourceTree = "<group>"; };
 		CEE78A6A2D7DB9810007C8D5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		CEE78A6E2D7DBD930007C8D5 /* MyBidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBidsViewController.swift; sourceTree = "<group>"; };
+		CEE78A6E2D7DBD930007C8D5 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CEE78A712D7DBDB50007C8D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CEE78A742D7DBDC60007C8D5 /* EnterLotDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterLotDetailsViewController.swift; sourceTree = "<group>"; };
 		CEE78A782D7DBE5D0007C8D5 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +188,11 @@
 		CEE78A842D7E2E040007C8D5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CEE78A862D80D1150007C8D5 /* AuctionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionItemCell.swift; sourceTree = "<group>"; };
 		CEE78A882D80D4E80007C8D5 /* AuctionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionItem.swift; sourceTree = "<group>"; };
+		CEEC44D32E06CB1700711AF1 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		CEEC44D52E06CD3700711AF1 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		CEEC44D72E06ED4100711AF1 /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
+		CEEC44D92E06F0AC00711AF1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CEEC44DB2E06F8C600711AF1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		FBC1529810C4F5EB876A07D6 /* Pods_Bidly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bidly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -329,7 +339,7 @@
 				CE87F0F32D84A32300E1203F /* AuctionItem */,
 				CEE78A7A2D7DBE6D0007C8D5 /* AuthReg */,
 				CEE78A762D7DBE430007C8D5 /* Notifications */,
-				CEE78A6C2D7DBD680007C8D5 /* MyBids */,
+				CEE78A6C2D7DBD680007C8D5 /* Chat */,
 				CEE78A692D7DB9430007C8D5 /* TabBar */,
 				CE8D078E2D74E96300927D78 /* Profile */,
 				CE8D078D2D74E95600927D78 /* AddLot */,
@@ -391,6 +401,7 @@
 				CEE78A842D7E2E040007C8D5 /* UIColor.swift */,
 				CEE445452DB18CC300F33366 /* Date.swift */,
 				CEA4F5092DE9A11900FBCB15 /* String.swift */,
+				CEEC44DB2E06F8C600711AF1 /* Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +466,7 @@
 				CE0BFCE92DF88FFD0024BB62 /* LotService.swift */,
 				CE0BFCED2DF8C7A70024BB62 /* AuctionAPI.swift */,
 				CE0BFCEF2DFA07B00024BB62 /* TestUploadService.swift */,
+				CEEC44D92E06F0AC00711AF1 /* API.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -587,18 +599,20 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		CEE78A6C2D7DBD680007C8D5 /* MyBids */ = {
+		CEE78A6C2D7DBD680007C8D5 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				CEE78A6D2D7DBD7E0007C8D5 /* View */,
 			);
-			path = MyBids;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		CEE78A6D2D7DBD7E0007C8D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEE78A6E2D7DBD930007C8D5 /* MyBidsViewController.swift */,
+				CEEC44D22E06CAFD00711AF1 /* Common */,
+				CEE78A6E2D7DBD930007C8D5 /* ChatViewController.swift */,
+				CEEC44D52E06CD3700711AF1 /* ChatListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,6 +670,15 @@
 				CEE78A7C2D7E13550007C8D5 /* CreateLotViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEEC44D22E06CAFD00711AF1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CEEC44D32E06CB1700711AF1 /* ChatMessageCell.swift */,
+				CEEC44D72E06ED4100711AF1 /* ChatListCell.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -795,6 +818,7 @@
 				CEE4456A2DB55BCA00F33366 /* NotificationCell.swift in Sources */,
 				CEE4455A2DB40CCE00F33366 /* FavoritesViewController.swift in Sources */,
 				CE3E138E2DB7FC9D00FF4E48 /* LotImageCarouselView.swift in Sources */,
+				CEEC44DA2E06F0AC00711AF1 /* API.swift in Sources */,
 				CE87F10E2D91E41400E1203F /* SuccessContainerView.swift in Sources */,
 				CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */,
 				CE3E13962DBB8A7600FF4E48 /* AuctionBannerView.swift in Sources */,
@@ -825,6 +849,7 @@
 				CEE445582DB40CBB00F33366 /* AdressViewController.swift in Sources */,
 				CE0BFCF52DFA8EC00024BB62 /* NewsCarouselView.swift in Sources */,
 				CE3E13922DB7FCFD00FF4E48 /* ThumbnailCell.swift in Sources */,
+				CEEC44D62E06CD3700711AF1 /* ChatListViewController.swift in Sources */,
 				CE8D07982D74F6BF00927D78 /* CustomButton.swift in Sources */,
 				CEE78A652D7B8B250007C8D5 /* RulesViewController.swift in Sources */,
 				CE8D07822D74E84E00927D78 /* SceneDelegate.swift in Sources */,
@@ -840,11 +865,14 @@
 				CE0BFCF72DFA8EE50024BB62 /* NewsCarouselCell.swift in Sources */,
 				CE0BFCEC2DF8C7750024BB62 /* AuctionModel.swift in Sources */,
 				CE8D07AA2D77832900927D78 /* Category.swift in Sources */,
-				CEE78A6F2D7DBD940007C8D5 /* MyBidsViewController.swift in Sources */,
+				CEEC44D82E06ED4100711AF1 /* ChatListCell.swift in Sources */,
+				CEE78A6F2D7DBD940007C8D5 /* ChatViewController.swift in Sources */,
 				CE8D079D2D762F9B00927D78 /* AuthViewModel.swift in Sources */,
+				CEEC44DC2E06F8C600711AF1 /* Data.swift in Sources */,
 				CEE445672DB55B5A00F33366 /* NotificationModel.swift in Sources */,
 				CEE445462DB18CC300F33366 /* Date.swift in Sources */,
 				CE3931AE2DDDDA0000B63E13 /* AuthError.swift in Sources */,
+				CEEC44D42E06CB1700711AF1 /* ChatMessageCell.swift in Sources */,
 				CEE78A682D7C81750007C8D5 /* CategoriesVIew.swift in Sources */,
 				CEA4F50C2DE9FBC800FBCB15 /* UIViewController.swift in Sources */,
 				CE3E13942DB96B4300FF4E48 /* BidDialogViewController.swift in Sources */,

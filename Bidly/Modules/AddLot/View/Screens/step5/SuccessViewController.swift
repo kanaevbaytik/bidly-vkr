@@ -68,15 +68,31 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
     }
     
     
+//    func didTapPublish() {
+//        guard let request = viewModel.toCreateRequest() else {
+//            print("❌ Недостаточно данных для отправки")
+//            return
+//        }
+//        
+//        print("📤 Публикация лота...")
+//
+//        LotService.shared.publishLot(request) { [weak self] result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let response):
+//                    print("✅ Успешно опубликовано: \(response.message), ID: \(response.lotId ?? -1)")
+//                    self?.showSuccessAlert()
+//                case .failure(let error):
+//                    print("❌ Ошибка при публикации: \(error.localizedDescription)")
+//                    self?.showErrorAlert()
+//                }
+//            }
+//        }
+//    }
     func didTapPublish() {
-        guard let request = viewModel.toCreateRequest() else {
-            print("❌ Недостаточно данных для отправки")
-            return
-        }
-        
         print("📤 Публикация лота...")
 
-        LotService.shared.publishLot(request) { [weak self] result in
+        LotService.shared.publishLotWithMultipart(from: viewModel) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):
@@ -89,6 +105,7 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
             }
         }
     }
+
 
     private func showSuccessAlert() {
         let alert = UIAlertController(title: "Успех", message: "Лот опубликован!", preferredStyle: .alert)

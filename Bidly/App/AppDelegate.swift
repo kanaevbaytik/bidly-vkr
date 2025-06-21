@@ -12,12 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        print("🟣 AppDelegate запущен без Firebase и пушей")
         return true
     }
 
-    // MARK: UISceneSession Lifecycle (если используешь UISceneDelegate)
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -26,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Здесь можно очищать ресурсы, если нужно
     }
 }
 

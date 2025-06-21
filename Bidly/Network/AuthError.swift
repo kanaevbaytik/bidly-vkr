@@ -12,6 +12,7 @@ enum AuthError: Error, LocalizedError {
     case refreshFailed
     case registrationFailed
     case unknown
+    case invalidURL
 
     var errorDescription: String? {
         switch self {
@@ -23,6 +24,8 @@ enum AuthError: Error, LocalizedError {
             return "Не удалось зарегистрироваться."
         case .unknown:
             return "Неизвестная ошибка."
+        case .invalidURL:
+            return "Неверный URL"
         }
     }
 }

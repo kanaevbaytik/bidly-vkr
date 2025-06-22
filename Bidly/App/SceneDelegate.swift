@@ -12,9 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = CustomTabBarController()
         let navigationController = UINavigationController(rootViewController: authViewController)
         
-
-        window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 }
-

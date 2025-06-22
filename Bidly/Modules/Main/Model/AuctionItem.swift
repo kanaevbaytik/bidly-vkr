@@ -8,6 +8,7 @@
 import Foundation
 
 struct AuctionItem {
+    let id: String
     let imageName: String
     let title: String
     let category: Category
@@ -17,4 +18,5 @@ struct AuctionItem {
     let description: String
     let sellerName: String
     let itemImages: [ItemImageResponse]
+//    let imageNames: [String?]
 }

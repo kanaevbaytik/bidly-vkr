@@ -29,14 +29,18 @@ class BidDialogViewController: UIViewController {
     
     var onConfirm: ((Int) -> Void)?
 
-    init(currentBid: Int, minStep: Int) {
+    private let auctionItemId: String
+
+    init(currentBid: Int, minStep: Int, auctionItemId: String) {
         self.currentBid = currentBid
         self.minStep = minStep
+        self.auctionItemId = auctionItemId
         self.selectedBid = currentBid + minStep
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
     }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -190,9 +194,31 @@ class BidDialogViewController: UIViewController {
     }
     
     @objc private func confirmTapped() {
-        onConfirm?(selectedBid)
-        dismiss(animated: true)
+        confirmButton.isEnabled = false
+
+        BidService.shared.placeBid(amount: selectedBid, auctionItemId: auctionItemId) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.confirmButton.isEnabled = true
+
+                switch result {
+                case .success:
+                    print("✅ Ставка успешно отправлена")
+                    self?.dismiss(animated: true)
+                case .failure(let error):
+                    print("❌ Ошибка при отправке ставки: \(error.localizedDescription)")
+                    self?.showErrorAlert()
+                }
+            }
+        }
     }
+    
+    private func showErrorAlert() {
+        let alert = UIAlertController(title: "Ошибка", message: "Не удалось отправить ставку. Попробуйте позже.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default))
+        present(alert, animated: true)
+    }
+
+
     
     @objc private func dismissTappedOutside() {
         dismiss(animated: true)

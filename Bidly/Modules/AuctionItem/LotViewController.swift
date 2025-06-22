@@ -158,8 +158,6 @@ class LotViewController: UIViewController {
         
         descriptionLabel.text = "Описание: \(auctionItem.description)"
         
-        // Устанавливаем изображения для карусели
-//        imageCarouselView.imageUrls = auctionItem.imageNames
         imageCarouselView.imageUrls = auctionItem.itemImages.map { $0.imageUrl }
 
     }
@@ -177,10 +175,10 @@ class LotViewController: UIViewController {
     }
     
     @objc private func bidButtonTapped() {
-        let dialog = BidDialogViewController(currentBid: auctionItem.lastBid, minStep: Int(Double(auctionItem.startPrice) * 0.05))
+        let dialog = BidDialogViewController(currentBid: auctionItem.lastBid, minStep: Int(Double(auctionItem.startPrice) * 0.05), auctionItemId: auctionItem.id)
         dialog.onConfirm = { [weak self] newBid in
             print("Ставка подтверждена: \(newBid) сом")
-            // тут ты можешь отправить ставку на сервер или обновить UI
+            // тут ты можно отправить ставку на сервер или обновить UI
         }
         present(dialog, animated: true)
     }

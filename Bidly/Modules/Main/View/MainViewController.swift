@@ -49,6 +49,7 @@ class MainViewController: UIViewController {
     // Моковые данные для тестирования
 //    private let mockAuctionItems: [AuctionItem] = [
 //        AuctionItem(
+//            id: "123121212121",
 //            imageName: "example1",
 //            title: "iPhone 13 Pro 256GB",
 //            category: .electronics,
@@ -60,6 +61,7 @@ class MainViewController: UIViewController {
 //            imageNames: ["example1", "example1","example2","example3" ]
 //        ),
 //        AuctionItem(
+//            id: "123121212121",
 //            imageName: "mock1",
 //            title: "MacBook Air M1, 2020, 256/8 GB, 13.3 inch, space gray",
 //            category: .electronics,
@@ -71,6 +73,7 @@ class MainViewController: UIViewController {
 //            imageNames: ["mock1", "mock2","mock3", "mock4","mock5"]
 //        ),
 //        AuctionItem(
+//            id: "123121212121",
 //            imageName: "mock_painting",
 //            title: "Картина маслом 'Море'",
 //            category: .electronics,
@@ -82,6 +85,7 @@ class MainViewController: UIViewController {
 //            imageNames: ["mock_painting"]
 //        ),
 //        AuctionItem(
+//            id: "123121212121",
 //            imageName: "mock_car",
 //            title: "Toyota Camry 2018",
 //            category: .auto,
@@ -114,7 +118,7 @@ class MainViewController: UIViewController {
             self?.navigationController?.pushViewController(vc, animated: true)
         }
 
-        // Настройка pull-to-refresh
+//         Настройка pull-to-refresh
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         scrollView.refreshControl = refreshControl
 
@@ -186,6 +190,7 @@ class MainViewController: UIViewController {
             let responses = try await AuctionAPI.shared.fetchPopularLots()
             self.auctionItems = responses.map {
                 AuctionItem(
+                    id: $0.id,
                     imageName: $0.itemImages.first?.imageUrl ?? "",
                     title: $0.title,
                     category: .electronics,

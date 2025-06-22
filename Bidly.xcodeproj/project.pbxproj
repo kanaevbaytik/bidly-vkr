@@ -95,6 +95,7 @@
 		CEEC44D82E06ED4100711AF1 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44D72E06ED4100711AF1 /* ChatListCell.swift */; };
 		CEEC44DA2E06F0AC00711AF1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44D92E06F0AC00711AF1 /* API.swift */; };
 		CEEC44DC2E06F8C600711AF1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44DB2E06F8C600711AF1 /* Data.swift */; };
+		CEEC44DE2E0710CB00711AF1 /* BidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC44DD2E0710CB00711AF1 /* BidService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -193,6 +194,7 @@
 		CEEC44D72E06ED4100711AF1 /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		CEEC44D92E06F0AC00711AF1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CEEC44DB2E06F8C600711AF1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CEEC44DD2E0710CB00711AF1 /* BidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidService.swift; sourceTree = "<group>"; };
 		FBC1529810C4F5EB876A07D6 /* Pods_Bidly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bidly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -431,7 +433,6 @@
 				CEE78A662D7C80B20007C8D5 /* HelpersView */,
 				CE8D07A02D7773B000927D78 /* MainViewController.swift */,
 				CEE78A642D7B8B250007C8D5 /* RulesViewController.swift */,
-				CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -467,6 +468,7 @@
 				CE0BFCED2DF8C7A70024BB62 /* AuctionAPI.swift */,
 				CE0BFCEF2DFA07B00024BB62 /* TestUploadService.swift */,
 				CEEC44D92E06F0AC00711AF1 /* API.swift */,
+				CEEC44DD2E0710CB00711AF1 /* BidService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -582,6 +584,7 @@
 		CEE78A662D7C80B20007C8D5 /* HelpersView */ = {
 			isa = PBXGroup;
 			children = (
+				CEB3BAD82DBE88CE0044FF6E /* CategoryAuctionsViewController.swift */,
 				CEE78A672D7C81750007C8D5 /* CategoriesVIew.swift */,
 				CEE78A862D80D1150007C8D5 /* AuctionItemCell.swift */,
 				CE3E13952DBB8A7600FF4E48 /* AuctionBannerView.swift */,
@@ -821,6 +824,7 @@
 				CEEC44DA2E06F0AC00711AF1 /* API.swift in Sources */,
 				CE87F10E2D91E41400E1203F /* SuccessContainerView.swift in Sources */,
 				CE87F10A2D91BA7D00E1203F /* UploadPhotoContainer.swift in Sources */,
+				CEEC44DE2E0710CB00711AF1 /* BidService.swift in Sources */,
 				CE3E13962DBB8A7600FF4E48 /* AuctionBannerView.swift in Sources */,
 				CE87F1082D91BA5600E1203F /* UploadedPhotosContainer.swift in Sources */,
 				CE0BFCEA2DF88FFD0024BB62 /* LotService.swift in Sources */,

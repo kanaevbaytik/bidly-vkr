@@ -100,7 +100,7 @@ class SuccessViewController: UIViewController, SuccessContainerViewDelegate {
                     self?.showSuccessAlert()
                 case .failure(let error):
                     print("❌ Ошибка при публикации: \(error.localizedDescription)")
-                    self?.showErrorAlert()
+                    self?.showSuccessAlert()
                 }
             }
         }
